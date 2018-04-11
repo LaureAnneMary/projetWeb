@@ -10,4 +10,20 @@ class Photo extends Model
     {
         return $this->belongsTo('App\User');
     }
+
+    public function produit()
+    {
+        return $this->belongsTo('App\Produit');
+    }
+
+    public function commentaire()
+    {
+        return $this->belongsToMany('App\Commentaire');
+    }
+
+    public function evenement()
+    {
+        return $this->hasOne('App\Evenement');
+    }
+
 }

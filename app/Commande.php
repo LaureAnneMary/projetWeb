@@ -10,4 +10,15 @@ class Commande extends Model
     {
         return $this->belongsTo('App\User');
     }
+
+    public function etat_commande()
+    {
+        return $this->hasOne('App\Etat_commande');
+    }
+
+    public function produit()
+    {
+        return $this->hasOne('App\Produit');
+    }
+
 }

@@ -39,11 +39,22 @@ class User extends Authenticatable
 
     public function evenement()
     {
-        return $this->hasMany('App\Evenement');
+        return $this->belongsToMany('App\Evenement');
     }
 
     public function photo()
     {
         return $this->hasMany('App\Photo');
     }
+
+    public function etat_inscription()
+    {
+        return $this->hasOne('App\Etat_inscription');
+    }
+
+    public function rang_utilisateur()
+    {
+        return $this->hasOne('App\Rang_utilisateur');
+    }
+
 }

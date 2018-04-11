@@ -6,5 +6,8 @@ use Illuminate\Database\Eloquent\Model;
 
 class Rang_utilisateur extends Model
 {
-    //
+    public function user()
+    {
+        return $this->belongsToMany('App\User');
+    }
 }

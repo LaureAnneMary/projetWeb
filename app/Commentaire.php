@@ -10,4 +10,10 @@ class Commentaire extends Model
     {
         return $this->belongsTo('App\User');
     }
+
+    public function photo()
+    {
+        return $this->hasOne('App\Photo');
+    }
+
 }
