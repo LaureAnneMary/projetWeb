@@ -19,7 +19,7 @@ class CreateUsersTable extends Migration
             $table->text('prenom');
             $table->string('pseudo', 32)->nullable();
             $table->string('mail',254)->unique();
-            $table->string('motDePasse',48);
+            $table->string('password',48);
             $table->integer('id_Etat_Inscription')->index('FK_Utilisateur_id_Etat_Inscription');
             $table->integer('id_Rang_Utilisateur')->index('FK_Utilisateur_id_Rang_Utilisateur');
             $table->rememberToken();
