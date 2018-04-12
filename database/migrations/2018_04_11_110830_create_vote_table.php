@@ -14,9 +14,9 @@ class CreateVoteTable extends Migration {
 	{
 		Schema::create('vote', function(Blueprint $table)
 		{
-			$table->integer('id');
-			$table->integer('id_Evenement')->index('FK_vote_id_Evenement');
-			$table->primary(['id','id_Evenement']);
+			$table->foreign('id_Evenement')->references('id')->on('evenement');;
+            $table->foreign('id_User')->references('id')->on('user');
+            $table->primary(['id_Evenement','id_User']);
 		});
 	}
 

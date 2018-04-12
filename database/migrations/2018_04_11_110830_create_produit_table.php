@@ -19,6 +19,7 @@ class CreateProduitTable extends Migration {
 			$table->text('description', 65535)->nullable();
 			$table->decimal('prix', 15, 3);
 			$table->string('tva', 10);
+            $table->integer('id_Categorie')->unsigned();
 			$table->foreign('id_Categorie')->references('id')->on('categorie');
 		});
 	}

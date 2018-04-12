@@ -17,6 +17,8 @@ class CreateCommentaireTable extends Migration {
 			$table->integer('id', true);
 			$table->text('contenu')->nullable();
 			$table->date('dateCommentaire')->nullable();
+            $table->integer('id_User')->unsigned();
+            $table->integer('id_Photo')->unsigned();
 			$table->foreign('id_User')->references('id')->on('user');
 			$table->foreign('id_Photo')->references('id')->on('photo');
 		});

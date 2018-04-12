@@ -14,9 +14,9 @@ class CreateInscriptionTable extends Migration {
 	{
 		Schema::create('inscription', function(Blueprint $table)
 		{
-			$table->integer('id');
-			$table->integer('id_Utilisateur')->index('FK_inscription_id_Utilisateur');
-			$table->primary(['id','id_Utilisateur']);
+			$table->foreign('id_Evenement')->references('id')->on('evenement');;
+			$table->foreign('id_User')->references('id')->on('user');
+			$table->primary(['id_Evenement','id_User']);
 		});
 	}
 

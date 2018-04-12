@@ -20,6 +20,8 @@ class CreateUsersTable extends Migration
             $table->string('pseudo', 32)->nullable();
             $table->string('email')->unique();
             $table->string('password');
+            $table->integer('id_Etat_Inscription')->unsigned();
+            $table->integer('id_Rang_Utilisateur')->unsigned();
             $table->foreign('id_Etat_Inscription')->references('id')->on('etat_inscription');
             $table->foreign('id_Rang_Utilisateur')->references('id')->on('rang_utilisateur');
             $table->rememberToken();
