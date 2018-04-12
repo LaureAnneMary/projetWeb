@@ -10,4 +10,5 @@ class Etat_inscription extends Model
     {
         return $this->belongsToMany('App\User');
     }
+
 }
