@@ -22,10 +22,10 @@ class CreateEvenementTable extends Migration {
 			$table->decimal('prix', 15, 3);
 			$table->integer('vote');
             $table->integer('id_Validation_Evenement')->unsigned();
-            $table->integer('id_User')->unsigned();
+            $table->integer('id_Users')->unsigned();
             $table->integer('id_Recurrence')->unsigned();
 			$table->foreign('id_Validation_Evenement')->references('id')->on('validation_evenement');
-			$table->foreign('id_User')->references('id')->on('user');
+			$table->foreign('id_Users')->references('id')->on('users');
 			$table->foreign('id_Recurrence')->references('id')->on('recurrence');
 		});
 	}

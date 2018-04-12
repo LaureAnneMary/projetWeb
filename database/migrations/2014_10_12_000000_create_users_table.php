@@ -29,6 +29,14 @@ class CreateUsersTable extends Migration
         });
     }
 
+    /*   Schema::table('evenement_users', function(Blueprint $table){
+                $table->increments('id');
+                $table->integer('id_Evenement')->unsigned()->index();
+                $table->integer('id_Users')->unsigned()->index();
+                $table->foreign('id_Evenement')->references('id')->on('evenement');
+                $table->foreign('id_Users')->references('id')->on('users');
+        });*/
+
     /**
      * Reverse the migrations.
      *

@@ -17,10 +17,10 @@ class CreatePhotoTable extends Migration {
 			$table->integer('id', true);
 			$table->text('url', 65535);
 			$table->integer('nombreLike');
-            $table->integer('id_User')->unsigned();
+            $table->integer('id_Users')->unsigned();
             $table->integer('id_Evenement')->unsigned();
             $table->integer('id_Produit')->unsigned();
-			$table->foreign('id_User')->references('id')->on('user');
+			$table->foreign('id_Users')->references('id')->on('users');
 			$table->foreign('id_Evenement')->references('id')->on('evenement');
 			$table->foreign('id_Produit')->references('id')->on('produit');
 		});
