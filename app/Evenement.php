@@ -6,6 +6,10 @@ use Illuminate\Database\Eloquent\Model;
 
 class Evenement extends Model
 {
+    protected $table = 'evenement';
+
+    protected $fillable = ['libelle', 'description', 'dateEvenement', 'urlPhotoPrincipale', 'prix', 'vote', 'id_Validation_Evenement', 'id_Recurrence'];
+
     public function user()
     {
         return $this->belongsToMany('App\User');

@@ -6,6 +6,10 @@ use Illuminate\Database\Eloquent\Model;
 
 class Produit extends Model
 {
+    protected $table = 'produit';
+
+    protected $fillable = ['libelle', 'description', 'prix', 'tva', 'id_Categorie'];
+
     public function commande()
     {
         return $this->belongsToMany('App\Commande');

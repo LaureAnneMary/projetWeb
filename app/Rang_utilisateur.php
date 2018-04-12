@@ -10,6 +10,8 @@ class Rang_utilisateur extends Model
 
     public $timestamps = false;
 
+    protected $fillable = ['intitule'];
+
     public function user()
     {
         return $this->belongsToMany('App\User');

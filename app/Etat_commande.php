@@ -6,6 +6,8 @@ use Illuminate\Database\Eloquent\Model;
 
 class Etat_commande extends Model
 {
+    protected $fillable = ['etat'];
+
     public function commande()
     {
         return $this->belongsToMany('App\Commande', '');
