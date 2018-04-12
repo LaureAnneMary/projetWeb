@@ -13,7 +13,7 @@ class Produit extends Model
 
     public function categorie()
     {
-        return $this->hasOne('App\Categorie');
+        return $this->hasOne('App\Categorie',"id_Categorie");
     }
 
     public function photo()

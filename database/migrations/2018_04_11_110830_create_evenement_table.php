@@ -21,9 +21,9 @@ class CreateEvenementTable extends Migration {
 			$table->text('urlPhotoPrincipale', 65535)->nullable();
 			$table->decimal('prix', 15, 3);
 			$table->integer('vote');
-			$table->integer('id_Validation_Evenement')->index('FK_Evenement_id_Validation_Evenement');
-			$table->integer('id_Utilisateur')->index('FK_Evenement_id_Utilisateur');
-			$table->integer('id_Recurrence')->index('FK_Evenement_id_Recurrence');
+			$table->foreign('id_Validation_Evenement')->references('id')->on('validation_evenement');
+			$table->foreign('id_User')->references('id')->on('user');
+			$table->foreign('id_Recurrence')->references('id')->on('recurrence');
 		});
 	}
 

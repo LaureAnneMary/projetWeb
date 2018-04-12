@@ -8,7 +8,7 @@ class Categorie extends Model
 {
     public function produit()
     {
-        return $this->belongsToMany('App\Produit');
+        return $this->belongsTo('App\Produit');
     }
 
 }

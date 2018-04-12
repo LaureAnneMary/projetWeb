@@ -19,9 +19,9 @@ class CreateCommandeTable extends Migration {
 			$table->date('dateCommande');
 			$table->decimal('prix', 15, 3);
 			$table->integer('quantite');
-			$table->integer('id_Utilisateur')->index('FK_commande_id_Utilisateur');
-			$table->integer('id_Produit')->index('FK_commande_id_Produit');
-			$table->integer('id_Etat_Commande')->index('FK_commande_id_Etat_Commande');
+			$table->foreign('id_User')->references('id')->on('user');
+			$table->foreign('id_Produit')->references('id')->on('produit');
+			$table->foreign('id_Etat_Commande')->references('id')->on('etat_commande');
 		});
 	}
 
