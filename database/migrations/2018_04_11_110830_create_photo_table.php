@@ -17,9 +17,9 @@ class CreatePhotoTable extends Migration {
 			$table->integer('id', true);
 			$table->text('url', 65535);
 			$table->integer('nombreLike');
-			$table->integer('id_Utilisateur')->index('FK_Photo_id_Utilisateur');
-			$table->integer('id_Evenement')->index('FK_Photo_id_Evenement');
-			$table->integer('id_Produit')->index('FK_Photo_id_Produit');
+            $table->foreign('id_User')->references('id')->on('user');
+            $table->foreign('id_Evenement')->references('id')->on('evenement');
+            $table->foreign('id_Produit')->references('id')->on('produit');
 		});
 	}
 
