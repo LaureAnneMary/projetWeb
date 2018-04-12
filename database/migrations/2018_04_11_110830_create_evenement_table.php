@@ -28,6 +28,15 @@ class CreateEvenementTable extends Migration {
 			$table->foreign('id_Users')->references('id')->on('users');
 			$table->foreign('id_Recurrence')->references('id')->on('recurrence');
 		});
+
+        Schema::create('evenement_user', function(Blueprint $table){
+            $table->increments('id');
+            $table->integer('id_Evenement')->unsigned()->index();
+            $table->integer('id_Users')->unsigned()->index();
+            $table->foreign('id_Evenement')->references('id')->on('evenement')->onDelete('cascade');
+            $table->foreign('id_Users')->references('id')->on('users')->onDelete('cascade');
+        });
+
 	}
 
 
