@@ -38,9 +38,19 @@ class User extends Authenticatable
         return $this->hasMany('App\Commande');
     }
 
-    public function evenement()
+    public function evenementVote()
     {
-        return $this->belongsToMany('App\Evenement');
+        return $this->belongsToMany('App\Evenement','vote','id_evenement','id_users');
+    }
+
+    public function evenementInscription()
+    {
+        return $this->belongsToMany('App\Evenement', 'inscription', 'id_evenement', 'id_users');
+    }
+
+    public function evenmentPropose()
+    {
+        return $this->hasOne('App\User', 'id_evenement');
     }
 
     public function photo()
