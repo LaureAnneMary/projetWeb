@@ -15,5 +15,7 @@
     </div>
     <hr>
     <small>Poster le {{$evenement->created_at}}</small>
+    <hr>
+    <a href="/evenements/{{$evenement->id}}/edit" class="btn btn-default"> Modifier</a>
 
 @endsection
