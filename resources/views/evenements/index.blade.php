@@ -3,7 +3,7 @@
 
 @section('content')
 
-    <h1>Evenements</h1>
+    <h1>Evenements Proposés</h1>
 
     @if(count($evenements)>0)
         @foreach($evenements as $evenement)
