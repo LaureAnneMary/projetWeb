@@ -15,6 +15,6 @@ class Etat_commande extends Model
 
     protected $table = 'etat_commande';
 
-    public $timestamps = false;
+    public $timestamps = true;
 
 }
