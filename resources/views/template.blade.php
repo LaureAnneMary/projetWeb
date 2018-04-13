@@ -3,9 +3,14 @@
 	Colorized by TEMPLATED
     templated.co @templatedco
     Released for free under the Creative Commons Attribution 3.0 license (templated.co/license)
+
+
+    Site pour le bde cesi bordeaux réalisé avec le template colorized
+    template.blade.php s'occupe de charger les base de notre site.
 -->
 <html>
 	<head>
+        <!--yield headtop permet d'ajouter des links/ scripts pour du contenue supplémentaire-->
 		@yield('headtop')
 		<title>BDE CESI BORDEAUX</title>
 		<meta http-equiv="content-type" content="text/html; charset=utf-8" />
@@ -25,10 +30,12 @@
 		<!--[if lte IE 8]><link rel="stylesheet" href="css/ie/v8.css" /><![endif]-->
 		<!--[if lte IE 9]><link rel="stylesheet" href="css/ie/v9.css" /><![endif]-->
 		@yield('headbottom')
+        <!--Même que headtop-->
 	</head>
 	<body class="homepage">
 
 	<!-- Header -->
+    <!--Contient le le bandeau, le titre et les puce de navigation du site-->
 		<div id="header">
 			<div id="logo-wrapper">
 				<div class="container">
@@ -54,6 +61,8 @@
 			</div>
 		</div>
 
+    <!--Main-->
+    <!--Ajout du contenu supplémentaire-->
     <div id="main">
 
             @yield('Accueil')
@@ -70,7 +79,6 @@
                     <h5 class="mt-0 mb-1">BDE CESI Bordeaux</h5>
                     Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin. Cras purus odio, vestibulum in vulputate at, tempus viverra turpis. Fusce condimentum nunc ac nisi vulputate fringilla. Donec lacinia congue felis in faucibus.
                 </div>
-                <img class="d-flex ml-3" src="images/pics07jpg" alt="Generic placeholder image">
             </div>
 		</footer>
 	<!-- /Footer -->
