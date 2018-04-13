@@ -37,7 +37,23 @@ class EvenementsController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $this->validate($request,[
+            'libelle'=>'required',
+            'urlPhotoPrincipale'=>'required',
+            'description'=>'required',
+            'prix'=>'required'
+        ]);
+
+        //créer un nouvel événement
+
+        $evenement = new Evenement;
+        $evenement->libelle = $request->input('libelle');
+        $evenement->urlPhotoPrincipale = $request->input('urlPhotoPrincipale');
+        $evenement->description = $request->input('description');
+        $evenement->prix = $request->input('prix');
+        $evenement->save();
+
+        return redirect('/evenements')->with('success','Evenement crée');
     }
 
     /**
