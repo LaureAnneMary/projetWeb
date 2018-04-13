@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Evenement;
 
 class EvenementsController extends Controller
 {
@@ -13,7 +14,9 @@ class EvenementsController extends Controller
      */
     public function index()
     {
-        //
+        //$evenements = Evenement::all();
+        $evenements=Evenement::where('id_Validation_Evenement','2')->get();
+        return view('evenements.index')->with('evenements',$evenements);
     }
 
     /**
@@ -23,7 +26,7 @@ class EvenementsController extends Controller
      */
     public function create()
     {
-        //
+        return view('evenements.creer');
     }
 
     /**
@@ -45,7 +48,9 @@ class EvenementsController extends Controller
      */
     public function show($id)
     {
-        //
+
+        $evenement = Evenement::find($id);
+        return view('evenements.details')->with('evenement', $evenement);
     }
 
     /**
