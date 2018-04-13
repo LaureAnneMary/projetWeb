@@ -19,6 +19,3 @@ Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
 
-//Route::get('/home/ru','Rang_utilisateurController@index');
-
-//Route::resource('rang_utilisateur', 'PostsController');

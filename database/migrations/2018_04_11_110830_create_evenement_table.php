@@ -27,7 +27,8 @@ class CreateEvenementTable extends Migration {
 			$table->foreign('id_Validation_Evenement')->references('id')->on('validation_evenement');
 			$table->foreign('id_Users')->references('id')->on('users');
 			$table->foreign('id_Recurrence')->references('id')->on('recurrence');
-		});
+			$table->timestamps();
+			});
 
         Schema::create('evenement_user', function(Blueprint $table){
             $table->increments('id');
