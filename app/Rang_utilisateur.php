@@ -10,7 +10,7 @@ class Rang_utilisateur extends Model
 
     public $timestamps = false;
 
-    protected $fillable = ['intitule'];
+    protected $fillable = [ 'intitule'];
 
     public function user()
     {
