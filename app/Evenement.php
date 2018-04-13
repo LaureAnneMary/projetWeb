@@ -8,11 +8,23 @@ class Evenement extends Model
 {
     protected $table = 'evenement';
 
+    public $primeryKey='id';
+
     protected $fillable = ['libelle', 'description', 'dateEvenement', 'urlPhotoPrincipale', 'prix', 'vote', 'id_Validation_Evenement', 'id_Recurrence'];
 
-    public function user()
+    public function userVote()
     {
-        return $this->belongsToMany('App\User');
+        return $this->belongsToMany('App\User', 'vote', 'id_users', 'id_evenement');
+    }
+
+    public function userInscription()
+    {
+        return $this->belongsToMany('App\User', 'inscription', 'id_users', 'id_evenement');
+    }
+
+    public function userPropose()
+    {
+        return $this->hasOne('App\User', 'id_users');
     }
 
     public function recurrence()
@@ -29,5 +41,7 @@ class Evenement extends Model
     {
         return $this->belongsToMany('App\Photo');
     }
+
+    public $timestamps = true;
 
 }
