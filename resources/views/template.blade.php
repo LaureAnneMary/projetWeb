@@ -7,7 +7,7 @@
 <html>
 	<head>
 		@yield('headtop')
-		<title>Colorized by TEMPLATED</title>
+		<title>BDE CESI BORDEAUX</title>
 		<meta http-equiv="content-type" content="text/html; charset=utf-8" />
 		<meta name="description" content="" />
 		<meta name="keywords" content="" />
@@ -44,7 +44,7 @@
 					<nav id="nav">
 						<ul>
 
-							<li class="active"><a href="/">accueil</a></li>
+							<li class="active"><a href="/">Accueil</a></li>
 							<li class="active"><a href="/Boite-à-idées">Boite à idées</a></li>
 							<li class="active"><a href="/Toutes-les-manifestations">Toutes les manifestations</a></li>
                             <li class="active"><a href="/Boutique">Boutique</a></li>
@@ -55,28 +55,24 @@
 		</div>
 
     <div id="main">
+
             @yield('Accueil')
             @yield('Inscription')
             @yield('Boite-à-idées')
-        @yield('Boutique')
-        @yield('Toutes-les-manifestations')
+			@yield('Boutique')
+        	@yield('Toutes-les-manifestations')
     </div>
 
 	<!-- Footer -->
-		<div id="footer">
-			<div class="container">
-				<div class="row">
-					<div class="6u">
-						<section>
-							<header>
-								<h2>Contact</h2>
-							</header>
-							<a href="#" class="image full"><img src="images/pics06.jpg" alt=""></a>
-						</section>
-                    </div>
-				</div>
-			</div>
-		</div>
+		<footer>
+            <div class="media">
+                <div class="media-body">
+                    <h5 class="mt-0 mb-1">BDE CESI Bordeaux</h5>
+                    Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin. Cras purus odio, vestibulum in vulputate at, tempus viverra turpis. Fusce condimentum nunc ac nisi vulputate fringilla. Donec lacinia congue felis in faucibus.
+                </div>
+                <img class="d-flex ml-3" src="images/pics07jpg" alt="Generic placeholder image">
+            </div>
+		</footer>
 	<!-- /Footer -->
 
 	<!-- Copyright -->

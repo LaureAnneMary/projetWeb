@@ -793,11 +793,12 @@
 /* Footer                                                                        */
 /*********************************************************************************/
 	
-	#footer
+	footer
 	{
-		position: relative;
+		/*position: relative;*/
 		background: #2c2c2c url(images/overlay.png) repeat;
 		color: rgba(255,255,255,.4);
+		text-align: center;
 	}
 	
 	#footer header

@@ -12,37 +12,13 @@
 
     <div class="container">
         <div class="row">
-        <span class="col-lg-6 col-sm-12 picture">
+        <span class="col-lg-3 col-sm-12 picture">
             <img class="img-thumbnail" src="//placehold.it/200x200">
         </span>
 
-            <span class="col-lg-3 col-sm-12">
+            <span class="col-lg-3 col-sm-12 picture ">
             <img class="img-thumbnail" src="//placehold.it/200x200">
-        </span>
-
-            <span class="col-lg-6 col-sm-12 picture">
-            <img class="img-thumbnail" src="//placehold.it/200x200">
-        </span>
-            <span class="col-lg-3 col-sm-12">
-            <img class="img-thumbnail" src="//placehold.it/200x200">
-        </span>
-
-
-            <span class="col-lg-6 col-sm-12 picture">
-            <img class="img-thumbnail" src="//placehold.it/200x200">
-        </span>
-
-            <span class="col-lg-3 col-sm-12">
-            <img class="img-thumbnail" src="//placehold.it/200x200">
-        </span>
-
-            <span class="col-lg-6 col-sm-12 picture">
-            <img class="img-thumbnail" src="//placehold.it/200x200">
-
-        </span>
-            <span class="col-lg-3 col-sm-12">
-            <img class="img-thumbnail" src="//placehold.it/200x200">
-        </span>
+            </span>
 
         </div>
     </div>
