@@ -77,7 +77,8 @@ class EvenementsController extends Controller
      */
     public function edit($id)
     {
-        //
+        $evenement = Evenement::find($id);
+        return view('evenements.modifier')->with('evenement', $evenement);
     }
 
     /**
@@ -89,7 +90,21 @@ class EvenementsController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $this->validate($request,[
+            'urlPhotoPrincipale'=>'required',
+            'description'=>'required',
+            'dateEvenement'=>'required'
+        ]);
+
+        //créer un nouvel événement
+
+        $evenement = Evenement::find($id);
+        $evenement->urlPhotoPrincipale = $request->input('urlPhotoPrincipale');
+        $evenement->description = $request->input('description');
+        $evenement->dateEvenement = $request->input('dateEvenement');
+       $evenement->save();
+
+        return redirect('/evenements')->with('success','Evenement modifier');
     }
 
     /**
@@ -100,6 +115,8 @@ class EvenementsController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $evenement=Evenement::find($id);
+        $evenement->delete();
+        return redirect('/evenements')->with('success','Evenement supprimer');
     }
 }
