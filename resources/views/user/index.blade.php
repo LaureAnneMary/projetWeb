@@ -4,7 +4,7 @@
 
 <head>
 
-    <title>rang utilisateur</title>
+    <title>Utilisateurs</title>
 
 </head>
 
@@ -14,10 +14,8 @@
 
 <ul>
 
-    @foreach($tasks as $task)
-
-        <li>{{ $task->body }}</li>
-
+    @foreach($users as $user)
+        <div>{{ $user->prenom}}</div>
     @endforeach
 
 </ul>

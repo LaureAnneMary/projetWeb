@@ -28,41 +28,49 @@ class User extends Authenticatable
         'password', 'remember_token',
     ];
 
+    //relation entre la table commentaire et users
     public function commentaire()
     {
         return $this->hasMany('App\Commentaire');
     }
 
+    //relation entre la table commande et users
     public function commande()
     {
         return $this->hasMany('App\Commande');
     }
 
+    //relation entre la table evenement et users (liaison vote)
     public function evenementVote()
     {
         return $this->belongsToMany('App\Evenement','vote','id_evenement','id_users');
     }
 
+    //relation entre la table evenement et users (liaison inscription)
     public function evenementInscription()
     {
         return $this->belongsToMany('App\Evenement', 'inscription', 'id_evenement', 'id_users');
     }
 
+    //relation entre la table evenement et users (liaison propose)
     public function evenmentPropose()
     {
         return $this->hasOne('App\User', 'id_evenement');
     }
 
+    //relation entre la table photo et users
     public function photo()
     {
         return $this->hasMany('App\Photo');
     }
 
+    //relation entre la table etat_inscription et users
     public function etat_inscription()
     {
         return $this->hasOne('App\Etat_inscription');
     }
 
+    //relation entre la table rang_utilisateur et users
     public function rang_utilisateur()
     {
         return $this->hasOne('App\Rang_utilisateur');

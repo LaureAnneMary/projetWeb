@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\View\View;
+use App\User;
 
 class UserController extends Controller
 {
@@ -11,9 +13,10 @@ class UserController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index() : View
     {
-        return view('rang_utilisateur.index');
+        $users = User::all();
+        return view('user.index')->with('users', $users);
     }
 
     /**
@@ -56,7 +59,7 @@ class UserController extends Controller
      */
     public function edit($id)
     {
-        //
+        return View::make('user.edit');
     }
 
     /**
