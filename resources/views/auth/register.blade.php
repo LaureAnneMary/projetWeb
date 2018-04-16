@@ -102,7 +102,7 @@
                             </div>
                         </div>
 
-                        {{--Entrer son rôle Etudient, Membre du BDE ou personnel du CESI--}}
+                        {{--Entrer son rôle Etudiant, Membre du BDE ou personnel du CESI--}}
 
                         <div class="row">
                             <div class="clo-md-12">

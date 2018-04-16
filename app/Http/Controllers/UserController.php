@@ -3,19 +3,21 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\View\View;
+use App\User;
 use App\Rang_utilisateur;
 
-class Rang_utilisateurController extends Controller
+class UserController extends Controller
 {
     /**
      * Display a listing of the resource.
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index() : View
     {
-        $rangUtilisateur = Rang_utilisateur::all();
-        return view('user.index')->with('rang_utilisateur', $rangUtilisateur);
+        $users = User::all();
+        return view('user.index')->with('users', $users);
     }
 
     /**
@@ -47,8 +49,10 @@ class Rang_utilisateurController extends Controller
      */
     public function show($id)
     {
-        //
+        $users = User::find($id);
+        return view('user.show')->with('users', $users);
     }
+
 
     /**
      * Show the form for editing the specified resource.
@@ -58,7 +62,8 @@ class Rang_utilisateurController extends Controller
      */
     public function edit($id)
     {
-        //
+       // $user = User::find($id);
+       // return view('user.edit')->witch('users', $user);
     }
 
     /**
