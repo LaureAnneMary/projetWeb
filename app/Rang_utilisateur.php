@@ -14,7 +14,7 @@ class Rang_utilisateur extends Model
 
     public function user()
     {
-        return $this->belongsToMany('App\User');
+        return $this->hasMany('App\User');
     }
 
 }
