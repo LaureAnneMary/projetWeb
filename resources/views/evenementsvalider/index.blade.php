@@ -1,7 +1,7 @@
 @extends('layouts.app')
 @section('content')
 
-    <a href="/evenementsValider" class="btn btn-primary" >Retour</a>
+    <a href="/" class="btn btn-primary" >Retour</a>
     <h1>Evenements du mois</h1>
 
     @if(count($evenementsValider)>0)
@@ -15,5 +15,4 @@
     @else
         <p>Il n'y a pas d'evenements</p>
     @endif
-
 @endsection

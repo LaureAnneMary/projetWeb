@@ -14,17 +14,17 @@ class Evenement extends Model
 
     public function userVote()
     {
-        return $this->belongsToMany('App\User', 'vote', 'id_users', 'id_evenement');
+        return $this->belongsToMany('App\User', 'vote', 'id_Users', 'id_evenement');
     }
 
     public function userInscription()
     {
-        return $this->belongsToMany('App\User', 'inscription', 'id_users', 'id_evenement');
+        return $this->belongsToMany('App\User', 'inscription', 'id_Users', 'id_evenement');
     }
 
     public function userPropose()
     {
-        return $this->belongsTo('App\User', 'id_users');
+        return $this->belongsTo('App\User', 'id_Users');
     }
 
     public function recurrence()

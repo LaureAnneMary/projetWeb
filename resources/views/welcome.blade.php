@@ -83,7 +83,7 @@
                 </div>
 
                 <div class="links">
-                    <a href="https://laravel.com/docs">Accueil</a>
+                    <a href="/accueil">Accueil</a>
                     <a href="/evenements">Boite à idées</a>
                     <a href="/evenementsValider">Les événements du mois</a>
                     <a href="https://forge.laravel.com">Mes événements </a>
