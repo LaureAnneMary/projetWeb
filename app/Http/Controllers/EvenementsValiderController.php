@@ -49,7 +49,7 @@ class EvenementsValiderController extends Controller
     public function show($id)
     {
         $evenementValider = Evenement::find($id);
-        return view('evenementsvalider.details')->with('evenementValider', $evenementValider);
+        return view('evenementsvalider.detailsValider')->with('evenementValider', $evenementValider);
     }
 
     /**
