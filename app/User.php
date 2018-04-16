@@ -53,7 +53,7 @@ class User extends Authenticatable
     }
 
     //relation entre la table evenement et users (liaison propose)
-    public function evenmentPropose()
+    public function evenementPropose()
     {
         return $this->hasOne('App\User', 'id_evenement');
     }
@@ -67,13 +67,13 @@ class User extends Authenticatable
     //relation entre la table etat_inscription et users
     public function etat_inscription()
     {
-        return $this->hasOne('App\Etat_inscription');
+        return $this->hasOne('App\Etat_inscription','id_Etat_Inscription');
     }
 
     //relation entre la table rang_utilisateur et users
     public function rang_utilisateur()
     {
-        return $this->hasOne('App\Rang_utilisateur');
+        return $this->belongsTo('App\Rang_utilisateur','id_Rang_Utilisateur');
     }
 
 }

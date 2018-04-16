@@ -27,12 +27,12 @@ class Evenement extends Model
 
     public function recurrence()
     {
-        return $this->hasOne('App\Recurrence');
+        return $this->hasOne('App\Recurrence','id_Recurrence');
     }
 
     public function validation_evenement()
     {
-        return $this->hasOne('App\Validation_evenement');
+        return $this->hasOne('App\Validation_evenement','id_Validation_Evenement');
     }
 
     public function photo()

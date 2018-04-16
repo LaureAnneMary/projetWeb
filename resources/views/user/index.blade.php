@@ -9,17 +9,14 @@
 </head>
 
 <body>
-
-<h1>Utilisateurs</h1>
-
 <ul>
-
+    <h1>Utilisateurs</h1>
     @foreach($users as $user)
-        <div>{{ $user->prenom}}</div>
+        <div class="well">
+            <h3><a href="/users/{{$user->id}}">{{$user->prenom}}</a></h3>
+        </div>
     @endforeach
-
 </ul>
-
 </body>
 
 </html>

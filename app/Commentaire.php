@@ -12,12 +12,12 @@ class Commentaire extends Model
 
     public function user()
     {
-        return $this->belongsTo('App\User');
+        return $this->belongsTo('App\User','id_Users');
     }
 
     public function photo()
     {
-        return $this->hasOne('App\Photo');
+        return $this->hasOne('App\Photo','id_Photo');
     }
 
 }

@@ -14,7 +14,8 @@ class Rang_utilisateurController extends Controller
      */
     public function index()
     {
-        //
+        $rangUtilisateur = Rang_utilisateur::all();
+        return view('user.index')->with('rang_utilisateur', $rangUtilisateur);
     }
 
     /**

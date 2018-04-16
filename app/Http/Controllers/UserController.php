@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use Illuminate\View\View;
 use App\User;
+use App\Rang_utilisateur;
 
 class UserController extends Controller
 {
@@ -48,8 +49,10 @@ class UserController extends Controller
      */
     public function show($id)
     {
-        //
+        $users = User::find($id);
+        return view('user.show')->with('users', $users);
     }
+
 
     /**
      * Show the form for editing the specified resource.
@@ -59,7 +62,8 @@ class UserController extends Controller
      */
     public function edit($id)
     {
-        return View::make('user.edit');
+       // $user = User::find($id);
+       // return view('user.edit')->witch('users', $user);
     }
 
     /**
