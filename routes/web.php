@@ -12,10 +12,11 @@
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('template');
 });
 
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
-
+Route::resource('evenements','EvenementsController');
+Route::get('evenements{n}', 'EvenementsController@show')->where('n' ,'[1-9]+');

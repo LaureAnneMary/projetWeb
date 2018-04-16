@@ -1,5 +1,6 @@
-@extends('layouts.app')
-@include('inc.navbar')
+@extends('template')
+
+{{--@include('inc.navbar')--}}
 
 @section('content')
 
@@ -8,7 +9,9 @@
     @if(count($evenements)>0)
         @foreach($evenements as $evenement)
             <div class="well">
-                <h3><a href="/evenements/{{$evenement->id}}"> {{$evenement->libelle}}</a></h3>
+
+                <h3><a href="/evenements{{$evenement->id}}"> {{$evenement->libelle}}</a></h3>
+
                 <small>Publier le {{$evenement->created_at}}</small>
             </div>
         @endforeach
