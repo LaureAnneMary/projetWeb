@@ -8,12 +8,11 @@
             <div class="well">
                 <h3><a href="/accueil/{{$photo->id}}"> {{$photo->url}}</a></h3>
                 <p>Correspond à l'événement <strong>{{$photo->evenement->libelle}}</strong></p>
-                <small>Poster le {{$photo->created_at}}</small>
             </div>
         @endforeach
 
     @else
-        <p>Il n'y a pas d'evenements</p>
+        <p>Il n'y a pas de photos</p>
     @endif
 
 @endsection

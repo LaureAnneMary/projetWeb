@@ -10,8 +10,17 @@
 <div>
    Provient de l'événement {{$photo->evenement->libelle}}
 </div>
-<hr>
-<small>Poster le {{$photo->created_at}}</small>
+
+    <hr>
+
+<div>
+    @foreach($photo->commentaire as $commentaire)
+        <div>
+            <p> <strong>{{$commentaire->user->prenom}}</strong> : {{$commentaire->contenu}} </p>
+        </div>
+        @endforeach
+</div>
+
 <hr>
     <div>
         {{Form::open(['route'=>['commentaires.store',$photo->id,'method'=>"POST"]])}}
