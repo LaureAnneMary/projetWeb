@@ -42,7 +42,7 @@ class User extends Authenticatable
 
     public function evenementInscription()
     {
-        return $this->belongsToMany('App\Evenement', 'inscription', 'id_evenement', 'id_Users');
+        return $this->belongsToMany('App\Evenement', 'inscription', 'id_evenement', 'id_users');
     }
 
     public function evenementPropose()
@@ -53,7 +53,14 @@ class User extends Authenticatable
     //relation entre la table evenement et users (liaison vote)
     public function evenementVote()
     {
-        return $this->belongsToMany('App\Evenement','vote','id_evenement','id_Users');
+        return $this->belongsToMany('App\Evenement','vote','id_evenement','id_users');
+    }
+
+
+    //relation entre la table evenement et users (liaison propose)
+    public function evenementPropose()
+    {
+        return $this->hasOne('App\User', 'id_evenement');
     }
 
     //relation entre la table photo et users
