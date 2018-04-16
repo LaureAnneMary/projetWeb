@@ -12,7 +12,7 @@ class Photo extends Model
 
     public function user()
     {
-        return $this->belongsTo('App\User','id_Users');
+        return $this->belongsTo('App\User','id_users');
     }
 
     public function produit()
@@ -22,12 +22,12 @@ class Photo extends Model
 
     public function commentaire()
     {
-        return $this->belongsToMany('App\Commentaire');
+        return $this->hasMany('App\Commentaire');
     }
 
     public function evenement()
     {
-        return $this->hasOne('App\Evenement','id_Evenement');
+        return $this->belongsTo('App\Evenement','id_Evenement');
     }
 
 }

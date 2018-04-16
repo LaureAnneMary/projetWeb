@@ -8,6 +8,6 @@ class Validation_evenement extends Model
 {
     public function evenement()
     {
-        return $this->belongsToMany('App\Evenement');
+        return $this->hasMany('App\Evenement');
     }
 }
