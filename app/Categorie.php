@@ -12,7 +12,7 @@ class Categorie extends Model
 
     public function produit()
     {
-        return $this->belongsTo('App\Produit');
+        return $this->hasMany('App\Produit');
     }
 
 }

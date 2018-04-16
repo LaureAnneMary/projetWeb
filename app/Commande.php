@@ -12,17 +12,17 @@ class Commande extends Model
 
     public function user()
     {
-        return $this->belongsTo('App\User');
+        return $this->belongsTo('App\User','id_Users');
     }
 
     public function etat_commande()
     {
-        return $this->hasOne('App\Etat_commande');
+        return $this->belongsTo('App\Etat_commande','id_Etat_Commande');
     }
 
     public function produit()
     {
-        return $this->hasOne('App\Produit');
+        return $this->belongsTo('App\Produit','id_Produit');
     }
 
 }

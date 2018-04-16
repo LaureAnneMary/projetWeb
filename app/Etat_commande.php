@@ -10,7 +10,7 @@ class Etat_commande extends Model
 
     public function commande()
     {
-        return $this->belongsToMany('App\Commande', '');
+        return $this->hasMany('App\Commande');
     }
 
     protected $table = 'etat_commande';
