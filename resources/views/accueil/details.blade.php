@@ -16,7 +16,9 @@
 <div>
     @foreach($photo->commentaire as $commentaire)
         <div>
+            <small>{{$commentaire->dateCommentaire}}</small>
             <p> <strong>{{$commentaire->user->prenom}}</strong> : {{$commentaire->contenu}} </p>
+
         </div>
         @endforeach
 </div>
