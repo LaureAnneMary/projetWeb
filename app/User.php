@@ -52,6 +52,7 @@ class User extends Authenticatable
         return $this->hasMany('App\User', 'id_evenement');
     }
 
+    //relation entre la table photo et users
     public function photo()
     {
         return $this->hasMany('App\Photo');
