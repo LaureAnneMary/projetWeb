@@ -3,9 +3,10 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Rang_utilisateur;
+use App\Evenement;
+use DB;
 
-class Rang_utilisateurController extends Controller
+class EvenementsValiderController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -14,8 +15,8 @@ class Rang_utilisateurController extends Controller
      */
     public function index()
     {
-        $rangUtilisateur = Rang_utilisateur::all();
-        return view('user.index')->with('rang_utilisateur', $rangUtilisateur);
+        $evenementsValider=Evenement::where('id_Validation_Evenement','1')->where(DB::raw('MONTH(dateEvenement)'), '=', date('n'))->get();
+        return view('evenementsvalider.index')->with('evenementsValider',$evenementsValider);
     }
 
     /**
@@ -47,7 +48,8 @@ class Rang_utilisateurController extends Controller
      */
     public function show($id)
     {
-        //
+        $evenementValider = Evenement::find($id);
+        return view('evenementsvalider.detailsValider')->with('evenementValider', $evenementValider);
     }
 
     /**

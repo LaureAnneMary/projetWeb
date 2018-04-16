@@ -20,7 +20,6 @@
     @else
         <p>Pas d'utilisateurs</p>
     @endif
-
 </ul>
 </body>
 

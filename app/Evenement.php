@@ -8,6 +8,8 @@ class Evenement extends Model
 {
     protected $table = 'evenement';
 
+    public $primeryKey='id';
+
     protected $fillable = ['libelle', 'description', 'dateEvenement', 'urlPhotoPrincipale', 'prix', 'vote', 'id_Validation_Evenement', 'id_Recurrence'];
 
     public function userVote()
