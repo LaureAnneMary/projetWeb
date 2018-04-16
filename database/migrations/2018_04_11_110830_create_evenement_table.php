@@ -24,7 +24,7 @@ class CreateEvenementTable extends Migration {
             $table->integer('id_Validation_Evenement')->unsigned();
             $table->integer('id_Users')->unsigned();
             $table->integer('id_Recurrence')->unsigned();
-			$table->foreign('id_Validation_Evenement')->references('id')->on('validation_evenement');
+			$table->foreign('id_Validation_Evenement')->default('2')->references('id')->on('validation_evenement');
 			$table->foreign('id_Users')->references('id')->on('users');
 			$table->foreign('id_Recurrence')->references('id')->on('recurrence');
 			$table->timestamps();

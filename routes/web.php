@@ -19,6 +19,6 @@ Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
 
+Route::resource('evenements','EvenementsController');
+Route::resource('evenementsValider','EvenementsValiderController');
 
-//Route::get('/user/edit', 'UserController@edit');
-Route::resource('users', 'UserController');
