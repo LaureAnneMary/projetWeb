@@ -42,7 +42,7 @@ class User extends Authenticatable
 
     public function evenementInscription()
     {
-        return $this->belongsToMany('App\Evenement', 'inscription', 'id_evenement', 'id_Users');
+        return $this->belongsToMany('App\Evenement', 'inscription', 'id_evenement', 'id_users');
     }
 
     public function evenementPropose()
