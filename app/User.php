@@ -75,7 +75,7 @@ class User extends Authenticatable
     }
 
     public function isAdmin(){
-        return false;
+        return $this->rang_utilisateur->intitule == 'MembreBDE';
     }
 
 }
