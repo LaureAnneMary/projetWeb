@@ -57,11 +57,11 @@
 						<ul>
 							<li class="active"><a href="/">Accueil</a></li>
 							<li class="active"><a href="/evenements">Boite à idées</a></li>
-							<li class="active"><a href="/evenementsValider">Toutes les manifestations</a></li>
+							<li class="active"><a href="/evenementsValider">Les Événements du mois </a></li>
                             <li class="active"><a href="/Boutique">Boutique</a></li>
 							<!-- Authentication Links -->
 							@guest
-								<li class="active"><a  href="{{ route('login') }}">{{ __('Connection') }}</a></li>
+								<li class="active"><a  href="{{ route('login') }}">{{ __('Connexion') }}</a></li>
 								<li class="active"><a  href="{{ route('register') }}">{{ __('Inscription') }}</a></li>
 							@else
 								<li class="nav-item dropdown">
@@ -73,7 +73,7 @@
 										<li class="active"><a class="dropdown-item" href="{{ route('logout') }}"
 										   onclick="event.preventDefault();
                                                      document.getElementById('logout-form').submit();">
-											{{ __('Logout') }}
+											{{ __('se déconnecter') }}
 									</a></li>
 
 										<form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
