@@ -53,7 +53,7 @@ class User extends Authenticatable
     //relation entre la table evenement et users (liaison vote)
     public function evenementVote()
     {
-        return $this->belongsToMany('App\Evenement','vote','id_evenement','id_users');
+        return $this->belongsToMany('App\Evenement','vote','id_evenement','id_Users');
     }
 
     //relation entre la table photo et users

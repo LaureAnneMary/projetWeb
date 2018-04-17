@@ -5,7 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use Illuminate\View\View;
 use App\User;
-use App\Rang_utilisateur;
+//use App\Rang_utilisateur;
 
 class UserController extends Controller
 {
@@ -62,8 +62,8 @@ class UserController extends Controller
      */
     public function edit($id)
     {
-       // $user = User::find($id);
-       // return view('user.edit')->witch('users', $user);
+        //$users = User::find($id);
+        //return view('user.show')->with('users', $users);
     }
 
     /**
@@ -75,7 +75,17 @@ class UserController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+       $this->validate($request, [
+            'id_Rang_Utilisateur' => 'required',
+        ]);
+
+
+        $users = User::find($id);
+        //$users->rang_utilisateur->intitule = $request->input('intitule');
+        $users->id_Rang_Utilisateur = $request->input('id_Rang_Utilisateur');
+        $users->save();
+
+        return redirect ('/users')->with('success', 'Rang changé');
     }
 
     /**
@@ -86,6 +96,8 @@ class UserController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $users = User::find($id);
+        $users->delete();
+        return redirect ('/users')->with('success', 'Utilisateur supprimé');
     }
 }
