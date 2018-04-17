@@ -2,9 +2,11 @@
 
 namespace App\Http\Controllers;
 
+use Illuminate\Support\Facades\Gate;
 use Illuminate\Http\Request;
 use App\Evenement;
 use Illuminate\Support\Facades\Auth;
+
 class EvenementsController extends Controller
 {
     /**
@@ -15,6 +17,7 @@ class EvenementsController extends Controller
     public function index()
     {
 
+        //dd(Gate::allows('update-evenement'));
         //$evenements = Evenement::all();
         $evenements=Evenement::where('id_Validation_Evenement','2')->get();
         return view('evenements.index')->with('evenements',$evenements);
@@ -79,6 +82,7 @@ class EvenementsController extends Controller
      */
     public function edit($id)
     {
+        $this->authorize('update-evenement');
         $evenement = Evenement::find($id);
         return view('evenements.modifier')->with('evenement', $evenement);
     }
@@ -118,6 +122,7 @@ class EvenementsController extends Controller
      */
     public function destroy($id)
     {
+        $this->authorize('update-evenement');
         $evenement=Evenement::find($id);
         $evenement->delete();
         return redirect('/evenements')->with('success','Evenement supprimer');
