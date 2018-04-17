@@ -1,7 +1,8 @@
-@extends('layouts.app')
+@extends('template')
 
 @section('content')
-    <a href="/evenements" class="btn btn-primary" >Retour</a>
+
+    <a href="/evenements" >Retour</a>
 
     <h1>{{$evenement->libelle}}</h1>
     <div>
