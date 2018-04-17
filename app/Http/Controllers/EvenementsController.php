@@ -2,11 +2,11 @@
 
 namespace App\Http\Controllers;
 
-//use Illuminate\Support\Facades\Gate;
+
 use Illuminate\Http\Request;
 use App\Evenement;
 use Illuminate\Support\Facades\Auth;
-use App\Policies;
+
 
 class EvenementsController extends Controller
 {

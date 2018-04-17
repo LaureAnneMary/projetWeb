@@ -15,4 +15,10 @@
     </div>
     <hr>
     <small>Poster le {{$evenementValider->created_at}}</small>
+    @can('delete',$evenementValider)
+        {!!Form::open(['action'=>['EvenementsValiderController@destroy',$evenementValider->id],'method'=>'POST', 'class'=> 'pull-right'])!!}
+        {{Form::hidden('_method','DELETE')}}
+        {{Form::submit('Supprimer',['class'=>'btn btn-danger'])}}
+        {!!Form::close()!!}
+    @endcan
     @endsection

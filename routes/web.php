@@ -25,6 +25,7 @@ Route::get('evenements{n}', 'EvenementsController@show')->where('n' ,'[1-9]+');
 Route::resource('evenementsValider','EvenementsValiderController');
 Route::resource('/','PhotoController');
 Route::post('commentaires/{photo_id}',['uses'=>'CommentairesController@store','as'=>'commentaires.store']);
+Route::delete('commentaires/{photo_id}',['uses'=>'CommentairesController@destroy','as'=>'commentaires.destroy']);
 
 Route::resource('users','UserController');
 
