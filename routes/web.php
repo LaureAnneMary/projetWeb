@@ -11,9 +11,9 @@
 |
 */
 
-//Route::get('/', function () {
-//    return view('template');
-//});
+Route::get('/', function () {
+    return view('template');
+});
 
 Auth::routes();
 
@@ -27,3 +27,5 @@ Route::post('commentaires/{photo_id}',['uses'=>'CommentairesController@store','a
 
 Route::resource('users','UserController');
 
+Route::resource('/','PhotoController');
+Route::get('/{n}', 'PhotoController@show')->where('n' ,'[1-9]+');

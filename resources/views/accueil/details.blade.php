@@ -1,7 +1,7 @@
 @extends('template')
 
 @section('content')
-    <a href="/accueil" class="btn btn-primary" >Retour</a>
+    <a href="/" class="btn btn-primary" >Retour</a>
     <h1>{{$photo->url}}</h1>
 <div>
     Poster par {{$photo->user->prenom}} {{$photo->user->nom}}
