@@ -19,6 +19,7 @@ Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
 
-
-//Route::get('/user/edit', 'UserController@edit');
-Route::resource('users', 'UserController');
+Route::resource('evenements','EvenementsController');
+Route::resource('evenementsValider','EvenementsValiderController');
+Route::resource('accueil','PhotoController');
+Route::post('commentaires/{photo_id}',['uses'=>'CommentairesController@store','as'=>'commentaires.store']);

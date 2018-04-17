@@ -29,6 +29,7 @@
         {{Form::hidden('_method', 'DELETE')}}
         {{Form::submit('Delete')}}
     {!!Form::close() !!}
+    
 </div>
 
 </body>

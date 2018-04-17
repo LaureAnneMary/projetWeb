@@ -3,7 +3,8 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-
+use App\Evenement;
+use Illuminate\Support\Facades\Auth;
 class EvenementsController extends Controller
 {
     /**
@@ -13,7 +14,10 @@ class EvenementsController extends Controller
      */
     public function index()
     {
-        //
+
+        //$evenements = Evenement::all();
+        $evenements=Evenement::where('id_Validation_Evenement','2')->get();
+        return view('evenements.index')->with('evenements',$evenements);
     }
 
     /**
@@ -23,7 +27,7 @@ class EvenementsController extends Controller
      */
     public function create()
     {
-        //
+        return view('evenements.creer');
     }
 
     /**
@@ -34,7 +38,24 @@ class EvenementsController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $this->validate($request,[
+            'libelle'=>'required',
+            'urlPhotoPrincipale'=>'required',
+            'description'=>'required',
+            'prix'=>'required'
+        ]);
+
+        //créer un nouvel événement
+
+        $evenement = new Evenement;
+        $evenement->libelle = $request->input('libelle');
+        $evenement->urlPhotoPrincipale = $request->input('urlPhotoPrincipale');
+        $evenement->description = $request->input('description');
+        $evenement->prix = $request->input('prix');
+        $evenement->id_Users = Auth::user()->id;
+        $evenement->save();
+
+        return redirect('/evenements')->with('success','Evenement crée');
     }
 
     /**
@@ -45,7 +66,9 @@ class EvenementsController extends Controller
      */
     public function show($id)
     {
-        //
+
+        $evenement = Evenement::find($id);
+        return view('evenements.details')->with('evenement', $evenement);
     }
 
     /**
@@ -56,7 +79,8 @@ class EvenementsController extends Controller
      */
     public function edit($id)
     {
-        //
+        $evenement = Evenement::find($id);
+        return view('evenements.modifier')->with('evenement', $evenement);
     }
 
     /**
@@ -68,7 +92,22 @@ class EvenementsController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $this->validate($request,[
+            'urlPhotoPrincipale'=>'required',
+            'description'=>'required',
+            'dateEvenement'=>'required'
+        ]);
+
+
+        //créer un nouvel événement
+
+        $evenement = Evenement::find($id);
+        $evenement->urlPhotoPrincipale = $request->input('urlPhotoPrincipale');
+        $evenement->description = $request->input('description');
+        $evenement->dateEvenement = $request->input('dateEvenement');
+        $evenement->save();
+
+        return redirect('/evenements')->with('success','Evenement modifier');
     }
 
     /**
@@ -79,6 +118,8 @@ class EvenementsController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $evenement=Evenement::find($id);
+        $evenement->delete();
+        return redirect('/evenements')->with('success','Evenement supprimer');
     }
 }
