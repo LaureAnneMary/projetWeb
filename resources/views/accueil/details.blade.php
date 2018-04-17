@@ -1,4 +1,4 @@
-@extends('layouts.app')
+@extends('template')
 
 @section('content')
     <a href="/accueil" class="btn btn-primary" >Retour</a>

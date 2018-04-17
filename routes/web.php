@@ -11,9 +11,9 @@
 |
 */
 
-Route::get('/', function () {
-    return view('template');
-});
+//Route::get('/', function () {
+//    return view('template');
+//});
 
 Auth::routes();
 
@@ -22,7 +22,7 @@ Route::resource('evenements','EvenementsController');
 Route::get('evenements{n}', 'EvenementsController@show')->where('n' ,'[1-9]+');
 
 Route::resource('evenementsValider','EvenementsValiderController');
-Route::resource('accueil','PhotoController');
+Route::resource('/','PhotoController');
 Route::post('commentaires/{photo_id}',['uses'=>'CommentairesController@store','as'=>'commentaires.store']);
 
 Route::resource('users','UserController');

@@ -51,11 +51,12 @@
 				<!-- Nav -->
 					<nav id="nav">
 						<ul>
-							<li class="active"><a href="/">Accueil</a></li>
+							<li class="active"><a href="/accueil">Accueil</a></li>
 							<li class="active"><a href="/evenements">Boite à idées</a></li>
-							<li class="active"><a href="/Toutes-les-manifestations">Toutes les manifestations</a></li>
+							<li class="active"><a href="/evenementsValider">Toutes les manifestations</a></li>
                             <li class="active"><a href="/Boutique">Boutique</a></li>
-                            <li class="active"><a href="/Connexion">Connexion/Inscription</a></li>
+                            <li class="active"><a href="{{ route('login') }}">Connexion</a></li>
+							<li class="active"><a href=" {{ route('register') }}">Inscription</a></li>
 						</ul>
 					</nav>
 			</div>
