@@ -12,7 +12,7 @@
         <p>{{$evenement->prix}} €</p>
     </div>
     <div>
-        {{$evenement->urlPhotoPrincipale}}
+        <p><img width="400" src="{{asset('images/'.$evenement->urlPhotoPrincipale)}}"/> </p>
     </div>
     <hr>
     <small>Poster le {{$evenement->created_at}}</small>

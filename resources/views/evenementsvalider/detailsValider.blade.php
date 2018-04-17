@@ -11,7 +11,7 @@
         <p>{{$evenementValider->prix}} €</p>
     </div>
     <div>
-        {{$evenementValider->urlPhotoPrincipale}}
+        <p><img width="400" src="{{asset('images/'.$evenementValider->urlPhotoPrincipale)}}"/> </p>
     </div>
     <hr>
     <small>Poster le {{$evenementValider->created_at}}</small>

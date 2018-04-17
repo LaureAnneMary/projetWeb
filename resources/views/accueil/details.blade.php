@@ -6,6 +6,9 @@
 <div>
     Poster par {{$photo->user->prenom}} {{$photo->user->nom}}
 </div>
+   <div>
+    <p><img width="600" src="{{asset('images/'.$photo->url)}}"/> </p>
+   </div>
 
 <div>
    Provient de l'événement {{$photo->evenement->libelle}}
