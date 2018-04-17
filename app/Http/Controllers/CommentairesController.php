@@ -50,7 +50,7 @@ class CommentairesController extends Controller
         $commentaire->dateCommentaire = date("Y-m-d H:i:s");
         $commentaire->save();
 
-        return redirect('/accueil')->with('success','Commentaire Ajouté');
+        return redirect('/')->with('success','Commentaire Ajouté');
     }
 
     /**

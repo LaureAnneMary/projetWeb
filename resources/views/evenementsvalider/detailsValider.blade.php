@@ -1,4 +1,4 @@
-@extends('layouts.app')
+@extends('template')
 
 @section('content')
     <a href="/evenementsValider" class="btn btn-primary" >Retour</a>
@@ -15,3 +15,4 @@
     </div>
     <hr>
     <small>Poster le {{$evenementValider->created_at}}</small>
+    @endsection
