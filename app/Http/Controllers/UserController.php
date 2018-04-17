@@ -3,19 +3,21 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Rang_utilisateur;
+use Illuminate\View\View;
+use App\User;
+//use App\Rang_utilisateur;
 
-class Rang_utilisateurController extends Controller
+class UserController extends Controller
 {
     /**
      * Display a listing of the resource.
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index() : View
     {
-        $rangUtilisateur = Rang_utilisateur::all();
-        return view('user.index')->with('rang_utilisateur', $rangUtilisateur);
+        $users = User::orderBy('nom')->get();
+        return view('user.index')->with('users', $users);
     }
 
     /**
@@ -47,8 +49,10 @@ class Rang_utilisateurController extends Controller
      */
     public function show($id)
     {
-        //
+        $users = User::find($id);
+        return view('user.show')->with('users', $users);
     }
+
 
     /**
      * Show the form for editing the specified resource.
@@ -58,7 +62,8 @@ class Rang_utilisateurController extends Controller
      */
     public function edit($id)
     {
-        //
+        //$users = User::find($id);
+        //return view('user.show')->with('users', $users);
     }
 
     /**
@@ -70,7 +75,17 @@ class Rang_utilisateurController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+       $this->validate($request, [
+            'id_Rang_Utilisateur' => 'required',
+        ]);
+
+
+        $users = User::find($id);
+        //$users->rang_utilisateur->intitule = $request->input('intitule');
+        $users->id_Rang_Utilisateur = $request->input('id_Rang_Utilisateur');
+        $users->save();
+
+        return redirect ('/users')->with('success', 'Rang changé');
     }
 
     /**
@@ -81,6 +96,8 @@ class Rang_utilisateurController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $users = User::find($id);
+        $users->delete();
+        return redirect ('/users')->with('success', 'Utilisateur supprimé');
     }
 }

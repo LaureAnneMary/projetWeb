@@ -8,16 +8,17 @@ class Commentaire extends Model
 {
     protected $table = 'commentaire';
 
-    protected $fillable = ['contenu', 'dateCommentaire', 'id_Utilisateur', 'id_Photo'];
+    protected $fillable = ['contenu', 'dateCommentaire', 'id_Utilisateur', 'photo_id'];
 
     public function user()
     {
-        return $this->belongsTo('App\User');
+        return $this->belongsTo('App\User','id_Users');
     }
 
     public function photo()
     {
-        return $this->hasOne('App\Photo');
+        return $this->belongsTo('App\Photo','photo_id');
     }
+    public $timestamps = false;
 
 }

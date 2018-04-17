@@ -12,12 +12,12 @@ class Produit extends Model
 
     public function commande()
     {
-        return $this->belongsToMany('App\Commande');
+        return $this->hasMany('App\Commande');
     }
 
     public function categorie()
     {
-        return $this->hasOne('App\Categorie',"id_Categorie");
+        return $this->belongsTo('App\Categorie',"id_Categorie");
     }
 
     public function photo()

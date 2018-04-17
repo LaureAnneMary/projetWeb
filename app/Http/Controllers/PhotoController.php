@@ -3,9 +3,9 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Rang_utilisateur;
+use App\Photo;
 
-class Rang_utilisateurController extends Controller
+class PhotoController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -14,8 +14,8 @@ class Rang_utilisateurController extends Controller
      */
     public function index()
     {
-        $rangUtilisateur = Rang_utilisateur::all();
-        return view('user.index')->with('rang_utilisateur', $rangUtilisateur);
+        $photos=Photo::all();
+        return view('accueil.index')->with('photos',$photos);
     }
 
     /**
@@ -47,7 +47,8 @@ class Rang_utilisateurController extends Controller
      */
     public function show($id)
     {
-        //
+        $photo=Photo::find($id);
+        return view('accueil.details')->with('photo',$photo);
     }
 
     /**

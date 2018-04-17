@@ -3,9 +3,11 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Rang_utilisateur;
+use App\Photo;
+use App\Commentaire;
+use Illuminate\Support\Facades\Auth;
 
-class Rang_utilisateurController extends Controller
+class CommentairesController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -14,8 +16,7 @@ class Rang_utilisateurController extends Controller
      */
     public function index()
     {
-        $rangUtilisateur = Rang_utilisateur::all();
-        return view('user.index')->with('rang_utilisateur', $rangUtilisateur);
+        //
     }
 
     /**
@@ -34,9 +35,22 @@ class Rang_utilisateurController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(Request $request, $id_Photo)
     {
-        //
+        $this->validate($request,array(
+            'contenu'=>'required'
+        ));
+
+        $photo=Photo::find($id_Photo);
+
+        $commentaire = new Commentaire();
+        $commentaire->contenu = $request->contenu;
+        $commentaire->photo()->associate($photo);
+        $commentaire->id_Users = Auth::user()->id;
+        $commentaire->dateCommentaire = date("Y-m-d H:i:s");
+        $commentaire->save();
+
+        return redirect('/accueil')->with('success','Commentaire Ajouté');
     }
 
     /**

@@ -3,7 +3,7 @@
 @section('content')
     <a href="/evenements" >Retour</a>
 
-    <h1>Proposez un Evenement</h1>
+    <h1>Proposer un Evenement</h1>
     {!! Form::open(['action' => 'EvenementsController@store','method'=>'POST']) !!}
 
         {{--Entrer un nom a l'evenement--}}

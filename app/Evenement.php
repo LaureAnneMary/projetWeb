@@ -14,32 +14,32 @@ class Evenement extends Model
 
     public function userVote()
     {
-        return $this->belongsToMany('App\User', 'vote', 'id_users', 'id_evenement');
+        return $this->belongsToMany('App\User', 'vote', 'id_Users', 'id_evenement');
     }
 
     public function userInscription()
     {
-        return $this->belongsToMany('App\User', 'inscription', 'id_users', 'id_evenement');
+        return $this->belongsToMany('App\User', 'inscription', 'id_Users', 'id_evenement');
     }
 
     public function userPropose()
     {
-        return $this->hasOne('App\User', 'id_users');
+        return $this->belongsTo('App\User', 'id_Users');
     }
 
     public function recurrence()
     {
-        return $this->hasOne('App\Recurrence');
+        return $this->belongsTo('App\Recurrence','id_Recurrence');
     }
 
     public function validation_evenement()
     {
-        return $this->hasOne('App\Validation_evenement');
+        return $this->belongsTo('App\Validation_evenement','id_Validation_Evenement');
     }
 
     public function photo()
     {
-        return $this->belongsToMany('App\Photo');
+        return $this->hasMany('App\Photo');
     }
 
     public $timestamps = true;

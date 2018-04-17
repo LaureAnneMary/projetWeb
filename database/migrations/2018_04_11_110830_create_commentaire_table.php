@@ -18,9 +18,10 @@ class CreateCommentaireTable extends Migration {
 			$table->text('contenu')->nullable();
 			$table->date('dateCommentaire')->nullable();
             $table->integer('id_Users')->unsigned();
-            $table->integer('id_Photo')->unsigned();
+            $table->integer('photo_id')->unsigned();
 			$table->foreign('id_Users')->references('id')->on('users');
-			$table->foreign('id_Photo')->references('id')->on('photo');
+			$table->foreign('photo_id')->references('id')->on('photo');
+			//$table->timestamps();
 		});
 	}
 
