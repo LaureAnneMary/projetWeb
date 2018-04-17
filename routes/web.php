@@ -23,3 +23,5 @@ Route::resource('evenements','EvenementsController');
 Route::resource('evenementsValider','EvenementsValiderController');
 Route::resource('accueil','PhotoController');
 Route::post('commentaires/{photo_id}',['uses'=>'CommentairesController@store','as'=>'commentaires.store']);
+
+Route::resource('users','UserController');
