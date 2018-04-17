@@ -100,7 +100,14 @@
                     <h5 class="mt-0 mb-1">BDE CESI Bordeaux</h5>
                     Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin. Cras purus odio, vestibulum in vulputate at, tempus viverra turpis. Fusce condimentum nunc ac nisi vulputate fringilla. Donec lacinia congue felis in faucibus.
                 </div>
-            </div>
+                <iframe
+                        width="600"
+                        height="450"
+                        frameborder="0" style="border:0"
+                        src="https://www.google.com/maps/embed/v1/place?key=AIzaSyAlnAPZfqZupIK9wch0TzHw1ULLDBx_szQ
+    &q=264+boulvard+godard,+33000+bordeaux" allowfullscreen>
+                </iframe>
+			</div>
 		</footer>
 	<!-- /Footer -->
 
@@ -108,10 +115,9 @@
 		<div id="copyright">
 			<div class="container">
 				<section>
-					<p>Conditions</p>
+					<p>Mentions légales</p>
 				</section>
 			</div>
 		</div>
-
 	</body>
 </html>
