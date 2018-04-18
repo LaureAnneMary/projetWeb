@@ -1,41 +1,18 @@
-{{--<!DOCTYPE html>--}}
-
-{{--<html>--}}
-
-{{--<head>--}}
-    {{--<meta charset="utf-8"/>--}}
-
-{{--</head>--}}
-
-{{--<body>--}}
-{{--<ul>--}}
-    {{--<h1>Utilisateurs</h1>--}}
-
-    {{--@if(count($users)>0)--}}
-        {{--@foreach($users as $user)--}}
-            {{--<div class="well">--}}
-                {{--<h3><a href="/users/{{$user->id}}">{{$user->prenom}} {{$user->nom}}</a></h3>--}}
-            {{--</div>--}}
-        {{--@endforeach--}}
-    {{--@else--}}
-        {{--<p>Pas d'utilisateurs</p>--}}
-    {{--@endif--}}
-
-{{--</ul>--}}
-{{--</body>--}}
-
-{{--</html>--}}
-
-
 @extends('template')
+@section('headtop')
+    <link href="{{ asset('css/style.css') }}" rel="stylesheet">
+    @endsection
 
 @section('content')
-    <button type="button" id="btn-clck1">Sélectionner étudiants</button>
-    <button type="button" id="btn-clck2">Sélectionner employés CESI</button>
-    <button type="button" id="btn-clck3">Sélectionner membres BDE</button>
-    <form action="/users">
-        <input type="submit" value="Retour à la liste" />
-    </form>
+
+    <div class="boutons">
+        <button type="button" id="btn-clck1" class='btn btn-link' style="width: 33%">Sélectionner étudiants</button>
+        <button type="button" id="btn-clck2" class='btn btn-link' style="width: 33%">Sélectionner employés CESI</button>
+        <button type="button" id="btn-clck3" class='btn btn-link' style="width: 33%">Sélectionner membres BDE</button>
+        <form action="/users">
+            <input type="submit" class='btn btn-link' style="width: 100%" value="Retour à la liste" />
+        </form>
+    </div>
     <div id="easyPaginate">
         @include('user.listeUtilisateurs')
     </div>
@@ -82,7 +59,3 @@
         });
     </script>
     @endsection
-{{--</ul>--}}
-{{--</body>--}}
-
-{{--</html>--}}
