@@ -3,6 +3,7 @@
 {{--@include('inc.navbar')--}}
 
 @section('content')
+    <a href="/evenements/create" >Proposer un événement</a>
 
     <h1>Evenements Proposés</h1>
 

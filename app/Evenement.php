@@ -19,7 +19,7 @@ class Evenement extends Model
 
     public function userInscription()
     {
-        return $this->belongsToMany('App\User', 'inscription', 'id_Users', 'id_Evenement');
+        return $this->belongsToMany('App\User', 'inscription', 'id_Evenement', 'id_Users');
     }
 
     public function userPropose()
