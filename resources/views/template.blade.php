@@ -28,8 +28,6 @@
 		</noscript>
 		<!--[if lte IE 8]><link rel="stylesheet" href="css/ie/v8.css" /><![endif]-->
 		<!--[if lte IE 9]><link rel="stylesheet" href="css/ie/v9.css" /><![endif]-->
-		{{--@yield('headbottom')--}}
-        <!--Même que headtop-->
 	</head>
 	<body class="homepage">
 
@@ -44,7 +42,10 @@
 							<h1><a href="#">Le BDE cesi Bordeaux</a></h1>
 						</div>
 				</div>
-			</div>			
+			</div>
+
+			<!-- Barre de navigation-->
+			<!-- représente la barre de navigation du site. La partie css de celui-ci se trouve dans le fichier style.CSS -->
 			<div class="container">
 				<!-- Nav -->
 					<nav id="nav">
@@ -54,11 +55,11 @@
 						<ul>
 							<li class="active"><a href="/">Accueil</a></li>
 							<li class="active"><a href="/evenements">Boite à idées</a></li>
-							<li class="active"><a href="/evenementsValider">Toutes les manifestations</a></li>
+							<li class="active"><a href="/evenementsValider">Les Événements du mois </a></li>
                             <li class="active"><a href="/Boutique">Boutique</a></li>
 							<!-- Authentication Links -->
 							@guest
-								<li class="active"><a  href="{{ route('login') }}">{{ __('Connection') }}</a></li>
+								<li class="active"><a  href="{{ route('login') }}">{{ __('Connexion') }}</a></li>
 								<li class="active"><a  href="{{ route('register') }}">{{ __('Inscription') }}</a></li>
 							@else
 								<li class="nav-item dropdown">
@@ -70,7 +71,7 @@
 										<li class="active"><a class="dropdown-item" href="{{ route('logout') }}"
 										   onclick="event.preventDefault();
                                                      document.getElementById('logout-form').submit();">
-											{{ __('Logout') }}
+											{{ __('se déconnecter') }}
 									</a></li>
 
 										<form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
@@ -85,13 +86,14 @@
 		</div>
 
     <!--Main-->
-    <!--Ajout du contenu supplémentaire-->
+    <!--Ajout du contenu supplémentaire / code de nouvelles pages vient s'insérer ici-->
     <div id="main">
-
 		@yield('content')
     </div>
 
+
 	<!-- Footer -->
+	<!--Bas de la page-->
 		<footer>
             <div class="media">
                 <div class="media-body">
@@ -106,7 +108,7 @@
 		<div id="copyright">
 			<div class="container">
 				<section>
-					<p>Conditions</p>
+					<p>Mentions légales</p>
 				</section>
 			</div>
 		</div>

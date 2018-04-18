@@ -74,4 +74,8 @@ class User extends Authenticatable
         return $this->belongsTo('App\Rang_utilisateur','id_Rang_Utilisateur');
     }
 
+    public function isAdmin(){
+        return $this->rang_utilisateur->intitule == 'MembreBDE';
+    }
+
 }

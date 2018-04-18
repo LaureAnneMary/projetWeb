@@ -1,17 +1,7 @@
 @extends('template')
 
 @section('content')
-        {{--<!DOCTYPE html>--}}
 
-{{--<html>--}}
-
-{{--<head>--}}
-
-    {{--<title>Evenements</title>--}}
-
-{{--</head>--}}
-
-{{--<body>--}}
     <a href="/evenementsValider" class="btn btn-primary" >Retour</a>
 
     <h1>{{$evenementValider->libelle}}</h1>
@@ -20,27 +10,26 @@
 
         <p>{{$evenementValider->prix}} €</p>
 
-        <p>{{$evenementValider->urlPhotoPrincipale}}</p>
+    </div>
+    <div>
+        <p><img width="400" src="{{asset('images/'.$evenementValider->urlPhotoPrincipale)}}"/> </p>
+    </div>
+    <hr>
+    <small>Poster le {{$evenementValider->created_at}}</small>
+    @can('delete',$evenementValider)
+        {!!Form::open(['action'=>['EvenementsValiderController@destroy',$evenementValider->id],'method'=>'POST', 'class'=> 'pull-right'])!!}
+        {{Form::hidden('_method','DELETE')}}
+        {{Form::submit('Supprimer',['class'=>'btn btn-danger'])}}
+        {!!Form::close()!!}
+    @endcan
 
     <hr>
-    {{--<button type="submit">Inscription</button>--}}
     {!!Form::open(['action'=> ['EvenementsValiderController@store', $evenementValider->id], 'method' => 'POST']) !!}
         {{Form::hidden('_method', 'POST')}}
         {{Form::submit("Inscription")}}
     {!!Form::close() !!}
 
-    {{--<form method="POST">--}}
-        {{--<input id="id_Evenement" name="id_Evenement" value="{{ $evenementValider->id }}" type="hidden">--}}
-        {{--<input type="submit" name="inscription" value="S'inscrire">--}}
-    {{--</form>--}}
-
-    {{--<form action=('EvenementsValider@store')>--}}
-    {{--<input type="submit" value="Inscription" />--}}
-    {{--</form>--}}
-
     <hr>
     <small>Poster le {{$evenementValider->created_at}}</small>
 @endsection
-{{--</body>--}}
 
-{{--</html>--}}

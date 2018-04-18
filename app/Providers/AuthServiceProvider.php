@@ -2,6 +2,9 @@
 
 namespace App\Providers;
 
+use App\Evenement;
+use App\Policies\EvenementPolicy;
+use Illuminate\Foundation\Auth\User;
 use Illuminate\Support\Facades\Gate;
 use Illuminate\Foundation\Support\Providers\AuthServiceProvider as ServiceProvider;
 
@@ -14,6 +17,8 @@ class AuthServiceProvider extends ServiceProvider
      */
     protected $policies = [
         'App\Model' => 'App\Policies\ModelPolicy',
+        Evenement::class => EvenementPolicy::class,
+        Commentaire::class => CommentairePolicy::class
     ];
 
     /**
@@ -26,6 +31,11 @@ class AuthServiceProvider extends ServiceProvider
         $this->registerPolicies();
 
 
-        //
+        Gate::define('update-evenement',function(User $user ){
+            return $user->rang_utilisateur->intitule == 'MembreBDE';
+        });
+        Gate::define('delete-commentaire',function(User $user ){
+            return $user->rang_utilisateur->intitule == 'MembreBDE';
+        });
     }
 }

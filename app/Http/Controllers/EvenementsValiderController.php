@@ -90,7 +90,11 @@ class EvenementsValiderController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $evenement=Evenement::find($id);
+        $this->authorize('delete',$evenement);
+        $evenement->delete();
+        return redirect('/evenementsValider')->with('success','Evenement supprimer');
+
     }
 
 }
