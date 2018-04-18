@@ -18,7 +18,7 @@
     @if(count($evenementsValider)>0)
         @foreach($evenementsValider as $evenementValider)
             <div class="well">
-                <h3><a href="/evenementsValider/{{$evenementValider->id}}"> {{$evenementValider->libelle}}</a></h3>
+                <h3><a href="/evenementsValider/{{$evenementValider->id}}?type=1" name="detail"> {{$evenementValider->libelle}}</a></h3>
                 <p><img width="200" src="{{asset('images/'.$evenementValider->urlPhotoPrincipale)}}"/> </p>
                 <small>Publier le {{$evenementValider->created_at}}</small>
             </div>

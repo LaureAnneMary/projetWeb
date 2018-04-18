@@ -14,9 +14,9 @@
     <div>
         <p><img width="400" src="{{asset('images/'.$evenementValider->urlPhotoPrincipale)}}"/> </p>
     </div>
-    <hr>
-    <small>Poster le {{$evenementValider->created_at}}</small>
+
     @can('delete',$evenementValider)
+        <hr>
         {!!Form::open(['action'=>['EvenementsValiderController@destroy',$evenementValider->id],'method'=>'POST', 'class'=> 'pull-right'])!!}
         {{Form::hidden('_method','DELETE')}}
         {{Form::submit('Supprimer',['class'=>'btn btn-danger'])}}
@@ -28,6 +28,13 @@
         {{Form::hidden('_method', 'POST')}}
         {{Form::submit("Inscription")}}
     {!!Form::close() !!}
+
+    <hr>
+    <h3><a href="/evenementsValider/{{$evenementValider->id}}?type=2" class="btn btn-primary" name="inscrit" >Liste des inscrits</a></h3>
+    {{--{!!Form::open(['action'=> ['/evenementsValider', $evenementValider->id], 'method' => 'POST']) !!}--}}
+        {{--{{Form::hidden('_method', 'POST')}}--}}
+        {{--{{Form::submit("Liste des inscrits")}}--}}
+    {{--{!!Form::close() !!}--}}
 
     <hr>
     <small>Poster le {{$evenementValider->created_at}}</small>

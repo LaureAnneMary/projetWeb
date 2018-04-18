@@ -4,9 +4,8 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Evenement;
-use Illuminate\Support\Facades\Auth;
 
-class EvenementsIncritsController extends Controller
+class listeInscritsController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -47,7 +46,9 @@ class EvenementsIncritsController extends Controller
      */
     public function show($id)
     {
-        //
+        $evenements = Evenement::find($id);
+        $evenements->userInscription->get();
+        return view('listeInscrits.index')->with('listeinscrits',$evenements);
     }
 
     /**
