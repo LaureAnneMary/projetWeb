@@ -16,6 +16,9 @@ class UserController extends Controller
      */
     public function index() : View
     {
+//
+//        $users = User::where('id_Rang_Utilisateur', '=', '2')->get();
+//        return view('user.listeUtilisateurs', ['users' => $users]);
         $users = User::orderBy('nom')->get();
         return view('user.index')->with('users', $users);
     }
@@ -38,7 +41,20 @@ class UserController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        if ($request->ajax()) {
+            switch ($_POST['filterParameter']){
+                case "students":
+                    $users = User::where('id_Rang_Utilisateur', '=', '1')->get();
+                    break;
+                case "members":
+                    $users = User::where('id_Rang_Utilisateur', '=', '2')->get();
+                    break;
+                case "employees":
+                    $users = User::where('id_Rang_Utilisateur', '=', '3')->get();
+                    break;
+            }
+            return view('user.listeUtilisateurs', ['users' => $users])->render();
+        }
     }
 
     /**

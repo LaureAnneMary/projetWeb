@@ -42,18 +42,18 @@ class User extends Authenticatable
 
     public function evenementInscription()
     {
-        return $this->belongsToMany('App\Evenement', 'inscription', 'id_evenement', 'id_users');
+        return $this->belongsToMany('App\Evenement', 'inscription', 'id_Evenement', 'id_Users');
     }
 
     public function evenementPropose()
     {
-        return $this->hasMany('App\User', 'id_evenement');
+        return $this->hasMany('App\User', 'id_Evenement');
     }
   
     //relation entre la table evenement et users (liaison vote)
     public function evenementVote()
     {
-        return $this->belongsToMany('App\Evenement','vote','id_evenement','id_Users');
+        return $this->belongsToMany('App\Evenement','vote','id_Evenement','id_Users');
     }
 
     //relation entre la table photo et users
@@ -72,6 +72,10 @@ class User extends Authenticatable
     public function rang_utilisateur()
     {
         return $this->belongsTo('App\Rang_utilisateur','id_Rang_Utilisateur');
+    }
+
+    public function isAdmin(){
+        return $this->rang_utilisateur->intitule == 'MembreBDE';
     }
 
 }

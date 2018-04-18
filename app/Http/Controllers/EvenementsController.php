@@ -2,9 +2,12 @@
 
 namespace App\Http\Controllers;
 
+
 use Illuminate\Http\Request;
 use App\Evenement;
 use Illuminate\Support\Facades\Auth;
+
+
 class EvenementsController extends Controller
 {
     /**
@@ -15,6 +18,7 @@ class EvenementsController extends Controller
     public function index()
     {
 
+        //dd(Gate::allows('update-evenement'));
         //$evenements = Evenement::all();
         $evenements=Evenement::where('id_Validation_Evenement','2')->get();
         return view('evenements.index')->with('evenements',$evenements);
@@ -79,7 +83,9 @@ class EvenementsController extends Controller
      */
     public function edit($id)
     {
+
         $evenement = Evenement::find($id);
+        $this->authorize('update',$evenement);
         return view('evenements.modifier')->with('evenement', $evenement);
     }
 
@@ -92,6 +98,8 @@ class EvenementsController extends Controller
      */
     public function update(Request $request, $id)
     {
+        $evenement = Evenement::find($id);
+        $this->authorize('update',$evenement);
         $this->validate($request,[
             'urlPhotoPrincipale'=>'required',
             'description'=>'required',
@@ -99,9 +107,8 @@ class EvenementsController extends Controller
         ]);
 
 
-        //créer un nouvel événement
+        //Mettre à jour un nouvel élément
 
-        $evenement = Evenement::find($id);
         $evenement->urlPhotoPrincipale = $request->input('urlPhotoPrincipale');
         $evenement->description = $request->input('description');
         $evenement->dateEvenement = $request->input('dateEvenement');
@@ -119,6 +126,7 @@ class EvenementsController extends Controller
     public function destroy($id)
     {
         $evenement=Evenement::find($id);
+        $this->authorize('delete',$evenement);
         $evenement->delete();
         return redirect('/evenements')->with('success','Evenement supprimer');
     }

@@ -25,11 +25,15 @@ Route::get('evenements{n}/edit', 'EvenementsController@edit')->where('n' ,'[0-9]
 //Route::resource('evenementsValider','EvenementsValiderController');
 //Route::resource('/','PhotoController');
 
+Route::resource('evenementsValider','EvenementsValiderController');
+Route::resource('/','PhotoController');
 Route::post('commentaires/{photo_id}',['uses'=>'CommentairesController@store','as'=>'commentaires.store']);
+Route::delete('commentaires/{photo_id}',['uses'=>'CommentairesController@destroy','as'=>'commentaires.destroy']);
 
 Route::resource('users','UserController');
 
 Route::resource('/','PhotoController');
+
 Route::get('/{n}', 'PhotoController@show')->where('n' ,'[0-9]+');
 
 Route::resource('evenementsValider','EvenementsValiderController');
@@ -39,4 +43,7 @@ Route::get('/Boutique', function() {
     return view('Boutique');
 });
 
+Route::get('/{n}', 'PhotoController@show')->where('n' ,'[1-9]+');
+
+Route::post('evenementsValider/{id_Evenement}',['uses'=>'EvenementsValiderController@store','as'=>'inscription.store']);
 

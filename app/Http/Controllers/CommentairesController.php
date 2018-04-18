@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\Photo;
 use App\Commentaire;
 use Illuminate\Support\Facades\Auth;
+use Gate;
 
 class CommentairesController extends Controller
 {
@@ -95,6 +96,11 @@ class CommentairesController extends Controller
      */
     public function destroy($id)
     {
-        //
+
+        $commentaire=Commentaire::find($id);
+        $this->authorize('delete-commentaire');
+        //$this->authorize('deleteCommentaire',$commentaire);
+        $commentaire->delete();
+        return redirect('/')->with('success','Commentaire supprimer');
     }
 }
