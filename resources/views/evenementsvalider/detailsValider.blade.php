@@ -20,7 +20,7 @@
         <p><img width="400" src="{{asset('images/'.$evenementValider->urlPhotoPrincipale)}}"/> </p>
     </div>
     <hr>
-    <small>Poster le {{$evenementValider->created_at}}</small>
+    <small>Posté le {{$evenementValider->created_at}}</small>
     @can('delete',$evenementValider)
         {!!Form::open(['action'=>['EvenementsValiderController@destroy',$evenementValider->id],'method'=>'POST', 'class'=> 'pull-right'])!!}
         {{Form::hidden('_method','DELETE')}}
