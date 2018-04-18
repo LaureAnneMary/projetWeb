@@ -6,8 +6,8 @@
 
     <h1>Mes événements</h1>
 {{--@php(dd($evenementValider->userInscription))--}}
-    @foreach($evenementValider->userInscription as $e)
-        {{ $e->prenom }}
+    @foreach($evenementValider->userInscription as $liste)
+        <li>{{ $liste->prenom }} {{ $liste->nom }}</li>
     @endforeach
 
 
