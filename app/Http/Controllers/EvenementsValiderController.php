@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Evenement;
 use DB;
+use Illuminate\Support\Facades\Auth;
 
 class EvenementsValiderController extends Controller
 {
@@ -35,9 +36,15 @@ class EvenementsValiderController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(Request $request,$idEvenementValid)
     {
-        //
+        $evenementValider = Evenement::find($idEvenementValid);
+        $id_Users = Auth::user()->id;
+
+        $evenementValider->userInscription()->attach($id_Users);
+
+       return redirect('/evenementsValider')->with('success', 'Tu es bien inscrit !');
+//        return view('evenementsvalider.index')->with('evenementsValider',$evenementValider);
     }
 
     /**
@@ -89,4 +96,5 @@ class EvenementsValiderController extends Controller
         return redirect('/evenementsValider')->with('success','Evenement supprimer');
 
     }
+
 }

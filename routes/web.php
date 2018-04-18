@@ -31,3 +31,5 @@ Route::resource('users','UserController');
 
 Route::resource('/','PhotoController');
 Route::get('/{n}', 'PhotoController@show')->where('n' ,'[1-9]+');
+
+Route::post('evenementsValider/{id_Evenement}',['uses'=>'EvenementsValiderController@store','as'=>'inscription.store']);

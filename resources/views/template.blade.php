@@ -19,10 +19,8 @@
 		<link href='http://fonts.googleapis.com/css?family=Questrial' rel='stylesheet' type='text/css'>
 
 		<!--[if lte IE 8]><script src="js/html5shiv.js"></script><![endif]-->
-		<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
-		<script src="js/skel.min.js"></script>
-		<script src="js/skel-panels.min.js"></script>
-		<script src="js/init.js"></script>
+
+
 		<noscript>
 			<link href="{{ asset('css/style.css') }}" rel="stylesheet">
 			<link href="{{ asset('css/skel-noscript.css') }}" rel="stylesheet">
@@ -114,6 +112,9 @@
 				</section>
 			</div>
 		</div>
-
+	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+	<script src="js/skel.min.js"></script>
+	<script src="js/skel-panels.min.js"></script>
+	<script src="js/init.js"></script>
 	</body>
 </html>
