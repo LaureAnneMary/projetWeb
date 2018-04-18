@@ -11,7 +11,7 @@
 <html>
 	<head>
         <!--yield headtop permet d'ajouter des links/ scripts pour du contenue supplémentaire-->
-		{{--@yield('headtop')--}}
+		@yield('headtop')
 		<title>BDE CESI BORDEAUX</title>
 		<meta http-equiv="content-type" content="text/html; charset=utf-8" />
 		<meta name="description" content="" />
@@ -22,9 +22,9 @@
 
 
 		<noscript>
-			<link href="{{ asset('css/style.css') }}" rel="stylesheet">
-			<link href="{{ asset('css/skel-noscript.css') }}" rel="stylesheet">
 			<link href="{{ asset('css/style-desktop.css') }}" rel="stylesheet">
+            <link href="{{ asset('css/style.css') }}" rel="stylesheet">
+            <link href="{{ asset('css/skel-noscript.css') }}" rel="stylesheet">
 		</noscript>
 		<!--[if lte IE 8]><link rel="stylesheet" href="css/ie/v8.css" /><![endif]-->
 		<!--[if lte IE 9]><link rel="stylesheet" href="css/ie/v9.css" /><![endif]-->
@@ -41,6 +41,9 @@
 						<div id="logo">
 							<h1><a href="#">Le BDE cesi Bordeaux</a></h1>
 						</div>
+
+
+
 				</div>
 			</div>
 
@@ -49,9 +52,6 @@
 			<div class="container">
 				<!-- Nav -->
 					<nav id="nav">
-
-
-
 						<ul>
 							<li class="active"><a href="/">Accueil</a></li>
 							<li class="active"><a href="/evenements">Boite à idées</a></li>
@@ -98,23 +98,34 @@
             <div class="media">
                 <div class="media-body">
                     <h5 class="mt-0 mb-1">BDE CESI Bordeaux</h5>
-                    Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin. Cras purus odio, vestibulum in vulputate at, tempus viverra turpis. Fusce condimentum nunc ac nisi vulputate fringilla. Donec lacinia congue felis in faucibus.
+                    Le  BDE CESI Bordeaux est une association nommé le "bureau des élèves" qui a pour but de promouvoir la création d'association au sein du CESI.
                 </div>
-            </div>
+			</div>
 		</footer>
 	<!-- /Footer -->
 
 	<!-- Copyright -->
 		<div id="copyright">
 			<div class="container">
+                <iframe
+                        width="600"
+                        height="450"
+                        frameborder="0" style="border:0"
+                        src="https://www.google.com/maps/embed/v1/place?key=AIzaSyAlnAPZfqZupIK9wch0TzHw1ULLDBx_szQ
+    &q=264+boulvard+godard,+33000+bordeaux" allowfullscreen>
+                </iframe>
 				<section>
 					<p>Mentions légales</p>
 				</section>
 			</div>
 		</div>
+
+    @yield('script')
+
 	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
 	<script src="js/skel.min.js"></script>
 	<script src="js/skel-panels.min.js"></script>
 	<script src="js/init.js"></script>
+
 	</body>
 </html>

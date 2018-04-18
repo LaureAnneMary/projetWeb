@@ -19,8 +19,11 @@ Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
 Route::resource('evenements','EvenementsController');
-Route::get('evenements{n}', 'EvenementsController@show')->where('n' ,'[1-9]+');
+Route::get('evenements{n}', 'EvenementsController@show')->where('n' ,'[0-9]+');
+Route::get('evenements{n}/edit', 'EvenementsController@edit')->where('n' ,'[0-9]+');
 
+//Route::resource('evenementsValider','EvenementsValiderController');
+//Route::resource('/','PhotoController');
 
 Route::resource('evenementsValider','EvenementsValiderController');
 Route::resource('/','PhotoController');
@@ -30,6 +33,17 @@ Route::delete('commentaires/{photo_id}',['uses'=>'CommentairesController@destroy
 Route::resource('users','UserController');
 
 Route::resource('/','PhotoController');
+
+Route::get('/{n}', 'PhotoController@show')->where('n' ,'[0-9]+');
+
+Route::resource('evenementsValider','EvenementsValiderController');
+Route::get('evenementsValider{n}', 'EvenementsValiderController@show')->where('n' ,'[0-9]+');
+
+Route::get('/Boutique', function() {
+    return view('Boutique');
+});
+
 Route::get('/{n}', 'PhotoController@show')->where('n' ,'[1-9]+');
 
 Route::post('evenementsValider/{id_Evenement}',['uses'=>'EvenementsValiderController@store','as'=>'inscription.store']);
+
