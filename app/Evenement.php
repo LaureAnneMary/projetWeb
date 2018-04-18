@@ -14,12 +14,12 @@ class Evenement extends Model
 
     public function userVote()
     {
-        return $this->belongsToMany('App\User', 'vote', 'id_Users', 'id_evenement');
+        return $this->belongsToMany('App\User', 'vote', 'id_Users', 'id_Evenement');
     }
 
     public function userInscription()
     {
-        return $this->belongsToMany('App\User', 'inscription', 'id_Users', 'id_evenement');
+        return $this->belongsToMany('App\User', 'inscription', 'id_Users', 'id_Evenement');
     }
 
     public function userPropose()
@@ -42,6 +42,6 @@ class Evenement extends Model
         return $this->hasMany('App\Photo');
     }
 
-    public $timestamps = true;
+   // public $timestamps = true;
 
 }

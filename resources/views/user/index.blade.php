@@ -5,18 +5,6 @@
 {{--<head>--}}
     {{--<meta charset="utf-8"/>--}}
 
-    {{--<link rel="stylesheet" type="text/css" href="{{asset('css/bootstrap.css')}}"/>--}}
-    {{--<link rel="stylesheet" type="text/css" href="{{asset('css/style.css')}}"/>--}}
-    {{--<link href='//netdna.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css' rel='stylesheet'/>--}}
-    {{--<script src="http://code.jquery.com/jquery-latest.js"></script>--}}
-    {{--<script src="{{asset('js/query.easyPaginate.js')}}"></script>--}}
-    {{--<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">--}}
-    {{--<script src="//code.jquery.com/jquery-latest.min.js"></script>--}}
-    {{--<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>--}}
-    {{--<script type="text/javascript" src="{{asset('js/bootstrap.min.js')}}"></script>--}}
-    {{--<title>Site BDE Bordeaux</title>--}}
-    {{--<title>Utilisateurs</title>--}}
-
 {{--</head>--}}
 
 {{--<body>--}}
@@ -45,6 +33,9 @@
     <button type="button" id="btn-clck1">Sélectionner étudiants</button>
     <button type="button" id="btn-clck2">Sélectionner employés CESI</button>
     <button type="button" id="btn-clck3">Sélectionner membres BDE</button>
+    <form action="/users">
+        <input type="submit" value="Retour à la liste" />
+    </form>
     <div id="easyPaginate">
         @include('user.listeUtilisateurs')
     </div>
