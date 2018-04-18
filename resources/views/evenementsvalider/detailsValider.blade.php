@@ -1,5 +1,11 @@
 @extends('template')
 
+@section('headtop')
+    <link href="{{ asset('css/style-desktop.css') }}" rel="stylesheet">
+    <link href="{{ asset('css/style.css') }}" rel="stylesheet">
+    <link href="{{ asset('css/skel-noscript.css') }}" rel="stylesheet">
+@endsection
+
 @section('content')
 
     <a href="/evenementsValider" class="btn btn-primary" >Retour</a>
