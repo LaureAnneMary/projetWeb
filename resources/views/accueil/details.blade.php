@@ -21,7 +21,7 @@
         <div>
             <small>{{$commentaire->dateCommentaire}}</small>
             <p> <strong>{{$commentaire->user->prenom}}</strong> : {{$commentaire->contenu}} </p>
-            @can('delete-commentaire')
+            @can('permission')
                 {!!Form::open(['action'=>['CommentairesController@destroy',$commentaire->id],'method'=>'POST', 'class'=> 'pull-right'])!!}
                 {{Form::hidden('_method','DELETE')}}
                 {{Form::submit('Supprimer',['class'=>'btn btn-danger'])}}

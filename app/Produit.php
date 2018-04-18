@@ -25,4 +25,6 @@ class Produit extends Model
         return $this->hasMany('App\Photo');
     }
 
+    public $timestamps = false;
+
 }

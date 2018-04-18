@@ -56,7 +56,7 @@
 							<li class="active"><a href="/">Accueil</a></li>
 							<li class="active"><a href="/evenements">Boite à idées</a></li>
 							<li class="active"><a href="/evenementsValider">Les Événements du mois </a></li>
-                            <li class="active"><a href="/Boutique">Boutique</a></li>
+                            <li class="active"><a href="/produits">Boutique</a></li>
 							<!-- Authentication Links -->
 							@guest
 								<li class="active"><a  href="{{ route('login') }}">{{ __('Connexion') }}</a></li>
@@ -88,7 +88,11 @@
     <!--Main-->
     <!--Ajout du contenu supplémentaire / code de nouvelles pages vient s'insérer ici-->
     <div id="main">
-		@yield('content')
+		<div class="container">
+			 <div class="row">
+				@yield('content')
+		</div>
+		</div>
     </div>
 
 

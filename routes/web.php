@@ -39,11 +39,11 @@ Route::get('/{n}', 'PhotoController@show')->where('n' ,'[0-9]+');
 Route::resource('evenementsValider','EvenementsValiderController');
 Route::get('evenementsValider{n}', 'EvenementsValiderController@show')->where('n' ,'[0-9]+');
 
-Route::get('/Boutique', function() {
-    return view('Boutique');
-});
+Route::resource('produits','ProduitsController');
 
 Route::get('/{n}', 'PhotoController@show')->where('n' ,'[1-9]+');
 
 Route::post('evenementsValider/{id_Evenement}',['uses'=>'EvenementsValiderController@store','as'=>'inscription.store']);
+
+
 
