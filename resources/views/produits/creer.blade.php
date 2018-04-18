@@ -1,15 +1,31 @@
 @extends('template')
 
+@section('headtop')
+    <link href="{{ asset('css/style-desktop.css') }}" rel="stylesheet">
+    <link href="{{ asset('css/style.css') }}" rel="stylesheet">
+    <link href="{{ asset('css/skel-noscript.css') }}" rel="stylesheet">
+@endsection
+
 @section('content')
     <a href="/produits" >Retour</a>
 
     <a>Ajouter un nouveau produit</a>
-    {!! Form::open(['action' => 'ProduitsController@store','method'=>'POST']) !!}
+    {{--{!! Form::open(['action' => 'ProduitsController@store','method'=>'POST']) !!}--}}
+    {!! Form::open(array(
+        'route' => 'produits.store',
+        'files' => true,
+        'novalidate'=>'novalidate'))
+        !!}
 
     {{--Entrer un nom au produit--}}
     <div class="form-group">
         {{Form::label('libelle','libelle')}}
         {{Form::text('libelle','',['class'=>'form-control','placeholder'=>'libelle'])}}
+    </div>
+
+    {{--Mettre une image au produit--}}
+    <div class="form-group">
+        {{Form::file('image',null,array('class'=>'form-control'))}}
     </div>
 
     {{--Ajouter une description au produit--}}

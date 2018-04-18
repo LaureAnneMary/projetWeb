@@ -47,6 +47,12 @@ class ProduitsController extends Controller
         $produit->libelle = $request->input('libelle');
         $produit->description = $request->input('description');
         $produit->prix = $request->input('prix');
+        if(($request->image)!=null){
+            $destinationPath = base_path().'\public\images';
+            $fichier=str_random(16).'.'.$request->file('image')->getClientOriginalExtension();
+            $produit->image=$fichier;
+            $request->image->move($destinationPath,$fichier);
+        }
         $produit->save();
         return redirect('/produits')->with('success','Produit ajouter');
 

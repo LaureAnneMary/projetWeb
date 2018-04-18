@@ -1,10 +1,21 @@
 @extends('template')
 
+@section('headtop')
+    <link href="{{ asset('css/style-desktop.css') }}" rel="stylesheet">
+    <link href="{{ asset('css/style.css') }}" rel="stylesheet">
+    <link href="{{ asset('css/skel-noscript.css') }}" rel="stylesheet">
+@endsection
+
 @section('content')
     <a href="/evenements" >Retour</a>
 
     <a>Proposer un Evenement</a>
-    {!! Form::open(['action' => 'EvenementsController@store','method'=>'POST']) !!}
+    {{--{!! Form::open(['action' => 'EvenementsController@store','method'=>'POST']) !!}--}}
+    {!! Form::open(array(
+        'route' => 'evenements.store',
+        'files' => true,
+        'novalidate'=>'novalidate'))
+        !!}
 
     {{--Entrer un nom a l'evenement--}}
     <div class="form-group">
@@ -14,8 +25,7 @@
 
     {{--Mettre une image a l'événement--}}
     <div class="form-group">
-        {{Form::label('urlPhotoPrincipale','Image')}}
-        {{Form::text('urlPhotoPrincipale','',['class'=>'form-control','placeholder'=>'URL Image'])}}
+        {{Form::file('urlPhotoPrincipale',null,array('class'=>'form-control'))}}
     </div>
 
     {{--Ajouter une description à l'événement--}}

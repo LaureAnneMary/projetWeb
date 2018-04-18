@@ -89,9 +89,8 @@
     <!--Ajout du contenu supplémentaire / code de nouvelles pages vient s'insérer ici-->
     <div id="main">
 		<div class="container">
-			 <div class="row">
+
 				@yield('content')
-		</div>
 		</div>
     </div>
 

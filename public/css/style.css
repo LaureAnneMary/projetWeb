@@ -22,6 +22,12 @@
 
 	h1,h2,h3,h4,h5,h6
 	{
+		
+	}
+	h1{
+		text-align: center;
+		font-size: 20px;
+		font-weight: bold;
 	}
 	
 		h1 a, h2 a, h3 a, h4 a, h5 a, h6 a
@@ -691,6 +697,9 @@
 
 		position: relative;
 		background: #d02020 url(images/overlay.png) repeat;
+		font-weight: normal;
+		font-size: 16px;
+
 
 	}
 

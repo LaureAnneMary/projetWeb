@@ -1,8 +1,10 @@
 @extends('template')
 
 @section('headtop')
-    <link href='http://fonts.googleapis.com/css?family=Questrial' rel='stylesheet' type='text/css'>
-    @endsection
+    <link href="{{ asset('css/style-desktop.css') }}" rel="stylesheet">
+    <link href="{{ asset('css/style.css') }}" rel="stylesheet">
+    <link href="{{ asset('css/skel-noscript.css') }}" rel="stylesheet">
+@endsection
 
 @section('content')
     <a href="/evenements" class="btn btn-primary" >Retour</a>
