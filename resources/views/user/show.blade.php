@@ -20,17 +20,15 @@
 
     <h1>{{$users->prenom}} {{$users->nom}} </h1>
     <small>Créé le {{$users->created_at}}</small>
+    <p>Entrer 1 pour étudiant</p>
+    <p>Entrer 2 pour membre du BDE</p>
+    <p>Entrer 3 pour salarié du CESI</p>
 <div>
     {!!  Form::open(['action' => ['UserController@update', $users->id], 'method' => 'POST']) !!}
             {{Form::label('id_Rang_Utilisateur', 'Rang de l\'utilisateur')}}
             {{Form::text('id_Rang_Utilisateur', $users->id_Rang_Utilisateur)}}
-            {{--{{Form::text('id_Rang_Utilisateur', $users->rang_utilisateur->intitule)}}--}}
-
-            {{--<h2>{{$users->rang_utilisateur->intitule}}</h2>--}}
-
-    {{Form::hidden('_method','PUT')}}
-
-    {{Form::submit('Modifier',['class'=>'btn btn-primary'])}}
+            {{Form::hidden('_method','PUT')}}
+            {{Form::submit('Modifier',['class'=>'btn btn-primary'])}}
     {!! Form::close() !!}
 
     {!!Form::open(['action'=> ['UserController@destroy', $users->id], 'method' => 'POST']) !!}

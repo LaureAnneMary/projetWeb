@@ -19,8 +19,8 @@
 
     {{--Entrer un nom au produit--}}
     <div class="form-group">
-        {{Form::label('libelle','libelle')}}
-        {{Form::text('libelle','',['class'=>'form-control','placeholder'=>'libelle'])}}
+        {{Form::label('libelle','Libellé')}}
+        {{Form::text('libelle','',['class'=>'form-control','placeholder'=>'Libellé'])}}
     </div>
 
     {{--Mettre une image au produit--}}

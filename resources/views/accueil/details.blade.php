@@ -4,7 +4,7 @@
     <a href="/" class="btn btn-primary" >Retour</a>
     <h1>{{$photo->url}}</h1>
 <div>
-    Poster par {{$photo->user->prenom}} {{$photo->user->nom}}
+    Posté par {{$photo->user->prenom}} {{$photo->user->nom}}
 </div>
    <div>
     <p><img width="600" src="{{asset('images/'.$photo->url)}}"/> </p>

@@ -19,6 +19,7 @@ class UserController extends Controller
 //
 //        $users = User::where('id_Rang_Utilisateur', '=', '2')->get();
 //        return view('user.listeUtilisateurs', ['users' => $users]);
+        $this->authorize('permission');
         $users = User::orderBy('nom')->get();
         return view('user.index')->with('users', $users);
     }

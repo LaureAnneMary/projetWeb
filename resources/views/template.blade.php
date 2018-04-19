@@ -39,7 +39,7 @@
 
 					<!-- Logo -->
 						<div id="logo">
-							<h1><a href="#">Le BDE cesi Bordeaux</a></h1>
+							<h1 style="font-weight:normal"><a href="#">Le BDE cesi Bordeaux</a></h1>
 						</div>
 
 
@@ -57,7 +57,9 @@
 							<li class="active"><a href="/evenements">Boite à idées</a></li>
 							<li class="active"><a href="/evenementsValider">Événements du mois </a></li>
                             <li class="active"><a href="/produits">Boutique</a></li>
+							@can('permission')
 							<li class="active"><a href="/users">Liste des utilisateurs</a></li>
+							@endcan
 							<!-- Authentication Links -->
 							@guest
 								<li class="active"><a  href="{{ route('login') }}">{{ __('Connexion') }}</a></li>
@@ -101,7 +103,7 @@
             <div class="media">
                 <div class="media-body">
                     <h5 class="mt-0 mb-1">BDE CESI Bordeaux</h5>
-                    Le  BDE CESI Bordeaux est une association nommé le "bureau des élèves" qui a pour but de promouvoir la création d'association au sein du CESI.
+                    Le  BDE CESI Bordeaux est une association nommée le "bureau des élèves" qui a pour but de promouvoir la création d'association au sein du CESI.
                 </div>
 			</div>
 		</footer>

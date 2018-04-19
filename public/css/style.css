@@ -273,7 +273,7 @@
 		.fa:before
 		{
 			display:inline-block;
-			font-family: FontAwesome;
+			font-family: FontAwesome, sans-serif;
 			font-size: 1.25em;
 			text-decoration: none;
 			font-style: normal;
@@ -841,4 +841,8 @@
 	{
 		text-decoration: none;
 		color: rgba(255,255,255,.3);
-	}			
+	}
+
+	.container {
+		font-family: FontAwesome, sans-serif;
+	}

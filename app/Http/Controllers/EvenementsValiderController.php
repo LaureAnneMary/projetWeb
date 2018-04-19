@@ -57,21 +57,15 @@ class EvenementsValiderController extends Controller
     public function show($id)
 
     {
-//        if($request->has('detail')){
-//            $evenementValider = Evenement::find($n);
-//            return view('evenementsvalider.detailsValider')->with('evenementValider', $evenementValider);
-//        }elseif ($request->has('inscrit')){
-//            $evenements = Evenement::find($id);
-//            $evenements->userInscription->get();
-//            return view('listeInscrits.index')->with('listeinscrits',$evenements);
-//        }
 
         $evenementValider = Evenement::find($id);
-//        dd($_GET);
+//       dd($_GET);
         if ($_GET['type'] == 1) {
             return view('evenementsvalider.detailsValider')->with('evenementValider', $evenementValider);        } elseif ($_GET['type'] == 2){
         }
+
         if ($_GET['type'] == 2) {
+            $this->authorize('permission');
             $evenementValider->userInscription()->get();
 
           return view('listeInscrits.index')->with('evenementValider',$evenementValider);

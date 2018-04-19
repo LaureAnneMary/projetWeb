@@ -12,7 +12,7 @@
             <div class="well">
                 <h3><a href="/evenements{{$evenement->id}}"> {{$evenement->libelle}}</a></h3>
                 <p><img width="200" src="{{asset('images/'.$evenement->urlPhotoPrincipale)}}"/> </p>
-                <small>Publier le {{$evenement->created_at}}</small>
+                <small>Publié le {{$evenement->created_at}}</small>
             </div>
         @endforeach
 

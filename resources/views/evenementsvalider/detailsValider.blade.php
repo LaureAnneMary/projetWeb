@@ -35,19 +35,18 @@
     @endcan
 
     <hr>
+
     {!!Form::open(['action'=> ['EvenementsValiderController@store', $evenementValider->id], 'method' => 'POST']) !!}
         {{Form::hidden('_method', 'POST')}}
         {{Form::submit("Inscription")}}
     {!!Form::close() !!}
 
+    @can('permission')
     <hr>
-    <h3><a href="/evenementsValider/{{$evenementValider->id}}?type=2" class="btn btn-primary" name="inscrit" >Liste des inscrits</a></h3>
-    {{--{!!Form::open(['action'=> ['/evenementsValider', $evenementValider->id], 'method' => 'POST']) !!}--}}
-        {{--{{Form::hidden('_method', 'POST')}}--}}
-        {{--{{Form::submit("Liste des inscrits")}}--}}
-    {{--{!!Form::close() !!}--}}
+    <h3 style="font-family: FontAwesome, sans-serif"><a href="/evenementsValider/{{$evenementValider->id}}?type=2" class="btn btn-primary" name="inscrit" >Liste des inscrits</a></h3>
+    @endcan
 
     <hr>
-    <small>Posté le {{$evenementValider->created_at}}</small>
+    <small style="font-family: FontAwesome, sans-serif ">Posté le {{$evenementValider->created_at}}</small>
 @endsection
 
