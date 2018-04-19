@@ -1,4 +1,9 @@
 @extends('template')
+@section('headtop')
+    <link href="{{ asset('css/style-desktop.css') }}" rel="stylesheet">
+    <link href="{{ asset('css/style.css') }}" rel="stylesheet">
+    <link href="{{ asset('css/skel-noscript.css') }}" rel="stylesheet">
+@endsection
 
 @section('headtop')
     <link href="{{ asset('css/style-desktop.css') }}" rel="stylesheet">
@@ -20,7 +25,7 @@
     <div>
         <p><img width="400" src="{{asset('images/'.$evenementValider->urlPhotoPrincipale)}}"/> </p>
     </div>
-
+    
     @can('delete',$evenementValider)
         <hr>
         {!!Form::open(['action'=>['EvenementsValiderController@destroy',$evenementValider->id],'method'=>'POST', 'class'=> 'pull-right'])!!}
@@ -43,6 +48,6 @@
     {{--{!!Form::close() !!}--}}
 
     <hr>
-    <small>Poster le {{$evenementValider->created_at}}</small>
+    <small>Posté le {{$evenementValider->created_at}}</small>
 @endsection
 

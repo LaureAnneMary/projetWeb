@@ -1,5 +1,11 @@
 @extends('template')
 
+@section('headtop')
+    <link href="{{ asset('css/style-desktop.css') }}" rel="stylesheet">
+    <link href="{{ asset('css/style.css') }}" rel="stylesheet">
+    <link href="{{ asset('css/skel-noscript.css') }}" rel="stylesheet">
+@endsection
+
 @section('content')
 
     <a href="/evenements" >Retour</a>
@@ -11,11 +17,14 @@
     <div>
         <p>{{$evenement->prix}} €</p>
     </div>
+    <di>
+        {{$evenement->dateEvenement}}
+    </di>
     <div>
         <p><img width="400" src="{{asset('images/'.$evenement->urlPhotoPrincipale)}}"/> </p>
     </div>
     <hr>
-    <small>Poster le {{$evenement->created_at}}</small>
+    <small>Posté le {{$evenement->created_at}}</small>
     <hr>
     
     @can('update', $evenement)
