@@ -98,7 +98,7 @@ class CommentairesController extends Controller
     {
 
         $commentaire=Commentaire::find($id);
-        $this->authorize('delete-commentaire');
+        $this->authorize('permission');
         //$this->authorize('deleteCommentaire',$commentaire);
         $commentaire->delete();
         return redirect('/')->with('success','Commentaire supprimer');

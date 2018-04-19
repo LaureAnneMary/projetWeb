@@ -53,10 +53,16 @@ class EvenementsController extends Controller
 
         $evenement = new Evenement;
         $evenement->libelle = $request->input('libelle');
-        $evenement->urlPhotoPrincipale = $request->input('urlPhotoPrincipale');
+        //$evenement->urlPhotoPrincipale = $request->input('urlPhotoPrincipale');
         $evenement->description = $request->input('description');
         $evenement->prix = $request->input('prix');
         $evenement->id_Users = Auth::user()->id;
+        if(($request->urlPhotoPrincipale)!=null){
+            $destinationPath = base_path().'\public\images';
+            $fichier=str_random(16).'.'.$request->file('urlPhotoPrincipale')->getClientOriginalExtension();
+            $evenement->urlPhotoPrincipale=$fichier;
+            $request->urlPhotoPrincipale->move($destinationPath,$fichier);
+        }
         $evenement->save();
 
         return redirect('/evenements')->with('success','Evenement crée');

@@ -88,7 +88,10 @@
     <!--Main-->
     <!--Ajout du contenu supplémentaire / code de nouvelles pages vient s'insérer ici-->
     <div id="main">
-		@yield('content')
+		<div class="container">
+
+				@yield('content')
+		</div>
     </div>
 
 

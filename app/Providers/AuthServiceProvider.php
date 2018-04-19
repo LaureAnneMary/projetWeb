@@ -30,12 +30,9 @@ class AuthServiceProvider extends ServiceProvider
     {
         $this->registerPolicies();
 
+        Gate::define('permission',function(User $user){
+            return $user->rang_utilisateur->intitule == 'MembreBDE';
+        });
 
-        Gate::define('update-evenement',function(User $user ){
-            return $user->rang_utilisateur->intitule == 'MembreBDE';
-        });
-        Gate::define('delete-commentaire',function(User $user ){
-            return $user->rang_utilisateur->intitule == 'MembreBDE';
-        });
     }
 }
