@@ -74,11 +74,14 @@ class EvenementsController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($n)
+    public function show(Request $request, $n)
     {
-
+    if($request->has(''))
         $evenement = Evenement::find($n);
         return view('evenements.details')->with('evenement', $evenement);
+
+        $evenements->userInscription->get();
+        return view('listeInscrits.index')->with('listeinscrits',$evenements);
     }
 
     /**

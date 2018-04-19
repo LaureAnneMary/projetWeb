@@ -53,11 +53,33 @@ class EvenementsValiderController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($n)
-    {
-        $evenementValider = Evenement::find($n);
+//    public function show(Request $request, $n)
+    public function show($id)
 
-        return view('evenementsvalider.detailsValider')->with('evenementValider', $evenementValider);
+    {
+//        if($request->has('detail')){
+//            $evenementValider = Evenement::find($n);
+//            return view('evenementsvalider.detailsValider')->with('evenementValider', $evenementValider);
+//        }elseif ($request->has('inscrit')){
+//            $evenements = Evenement::find($id);
+//            $evenements->userInscription->get();
+//            return view('listeInscrits.index')->with('listeinscrits',$evenements);
+//        }
+
+        $evenementValider = Evenement::find($id);
+//        dd($_GET);
+        if ($_GET['type'] == 1) {
+            return view('evenementsvalider.detailsValider')->with('evenementValider', $evenementValider);        } elseif ($_GET['type'] == 2){
+        }
+        if ($_GET['type'] == 2) {
+            $evenementValider->userInscription()->get();
+
+          return view('listeInscrits.index')->with('evenementValider',$evenementValider);
+        }
+
+
+
+
     }
 
     /**

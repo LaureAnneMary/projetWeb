@@ -36,7 +36,7 @@
 		<div id="header">
 			<div id="logo-wrapper">
 				<div class="container">
-						
+
 					<!-- Logo -->
 						<div id="logo">
 							<h1><a href="#">Le BDE cesi Bordeaux</a></h1>
@@ -55,8 +55,9 @@
 						<ul>
 							<li class="active"><a href="/">Accueil</a></li>
 							<li class="active"><a href="/evenements">Boite à idées</a></li>
-							<li class="active"><a href="/evenementsValider">Les Événements du mois </a></li>
-                            <li class="active"><a href="/produits">Boutique</a></li>
+							<li class="active"><a href="/evenementsValider">Événements du mois </a></li>
+                            <li class="active"><a href="/Boutique">Boutique</a></li>
+							<li class="active"><a href="/users">Liste des utilisateurs</a></li>
 							<!-- Authentication Links -->
 							@guest
 								<li class="active"><a  href="{{ route('login') }}">{{ __('Connexion') }}</a></li>
@@ -83,7 +84,6 @@
 						</ul>
 					</nav>
 			</div>
-		</div>
 
     <!--Main-->
     <!--Ajout du contenu supplémentaire / code de nouvelles pages vient s'insérer ici-->
