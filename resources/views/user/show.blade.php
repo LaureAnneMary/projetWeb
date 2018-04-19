@@ -20,9 +20,12 @@
 
     <h1>{{$users->prenom}} {{$users->nom}} </h1>
     <small>Créé le {{$users->created_at}}</small>
-    <p>Entrer 1 pour étudiant</p>
-    <p>Entrer 2 pour membre du BDE</p>
-    <p>Entrer 3 pour salarié du CESI</p>
+    <hr>
+    <ul>
+    <li> - Entrer 1 pour étudiants</li>
+    <li> - Entrer 2 pour membres du BDE</li>
+    <li> - Entrer 3 pour salariés du CESI</li>
+    </ul>
 <div>
     {!!  Form::open(['action' => ['UserController@update', $users->id], 'method' => 'POST']) !!}
             {{Form::label('id_Rang_Utilisateur', 'Rang de l\'utilisateur')}}

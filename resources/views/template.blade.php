@@ -57,6 +57,7 @@
 							<li class="active"><a href="/evenements">Boite à idées</a></li>
 							<li class="active"><a href="/evenementsValider">Événements du mois </a></li>
                             <li class="active"><a href="/produits">Boutique</a></li>
+
 							@can('permission')
 							<li class="active"><a href="/users">Liste des utilisateurs</a></li>
 							@endcan
