@@ -56,7 +56,7 @@
 							<li class="active"><a href="/">Accueil</a></li>
 							<li class="active"><a href="/evenements">Boite à idées</a></li>
 							<li class="active"><a href="/evenementsValider">Événements du mois </a></li>
-                            <li class="active"><a href="/Boutique">Boutique</a></li>
+                            <li class="active"><a href="/produits">Boutique</a></li>
 							<li class="active"><a href="/users">Liste des utilisateurs</a></li>
 							<!-- Authentication Links -->
 							@guest

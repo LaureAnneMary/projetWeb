@@ -10,9 +10,6 @@
     @endsection
 @section('content')
 
-
-    <a href="/" class="btn btn-primary" >Retour</a>
-    <button type="button" class="btn btn-primary">télécharger de la liste des inscrits</button>
     <h1>Evenements du mois</h1>
 
     @if(count($evenementsValider)>0)
