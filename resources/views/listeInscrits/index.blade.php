@@ -7,7 +7,7 @@
 
 @section('content')
 
-    <h1>Mes événements</h1>
+    <h1>Liste des inscrits</h1>
 {{--@php(dd($evenementValider->userInscription))--}}
     @foreach($evenementValider->userInscription as $liste)
         <li>{{ $liste->prenom }} {{ $liste->nom }}</li>

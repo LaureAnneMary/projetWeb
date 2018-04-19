@@ -17,7 +17,7 @@
             <div class="well">
                 <h3><a href="/evenementsValider/{{$evenementValider->id}}?type=1" name="detail"> {{$evenementValider->libelle}}</a></h3>
                 <p><img width="200" src="{{asset('images/'.$evenementValider->urlPhotoPrincipale)}}"/> </p>
-                <small style="font-size: 5px;">Publié le {{$evenementValider->created_at}}</small>
+                <small style="font-size: 10px;">Publié le {{$evenementValider->created_at}}</small>
             </div>
         @endforeach
 
