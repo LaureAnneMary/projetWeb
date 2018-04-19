@@ -36,7 +36,7 @@
 
     {!!Form::open(['action'=> ['UserController@destroy', $users->id], 'method' => 'POST']) !!}
         {{Form::hidden('_method', 'DELETE')}}
-        {{Form::submit('Delete')}}
+        {{Form::submit('Supprimer')}}
     {!!Form::close() !!}
     
 </div>

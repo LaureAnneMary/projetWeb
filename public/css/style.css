@@ -835,12 +835,14 @@
 	
 	#copyright .container
 	{
+		color: #d02020;
 	}
 	
 	#copyright a
 	{
 		text-decoration: none;
 		color: rgba(255,255,255,.3);
+
 	}
 
 	.container {
