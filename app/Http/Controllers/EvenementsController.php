@@ -76,6 +76,7 @@ class EvenementsController extends Controller
      */
     public function show($n)
     {
+
         $evenement = Evenement::find($n);
         return view('evenements.details')->with('evenement', $evenement);
     }
