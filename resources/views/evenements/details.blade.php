@@ -30,7 +30,14 @@
     @can('update', $evenement)
     <a href="/evenements/{{$evenement->id}}/edit" class="btn btn-default"> Modifier</a>
     @endcan
-    
+
+    <p>{{$evenement->vote}}</p>
+    {!! Form::open(['action' => ['EvenementsController@update',$evenement->id],'method'=>'POST']) !!}
+    {{Form::hidden('_method','PATCH')}}
+    {{Form::hidden('vote','true')}}
+    {{Form::submit('Voter',['class'=>'btn btn-primary'])}}
+    {!! Form::close() !!}
+
     @can('delete',$evenement)
     {!!Form::open(['action'=>['EvenementsController@destroy',$evenement->id],'method'=>'POST', 'class'=> 'pull-right'])!!}
     {{Form::hidden('_method','DELETE')}}

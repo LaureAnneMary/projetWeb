@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 
+use App\Policies\EvenementPolicy;
 use Illuminate\Http\Request;
 use App\Evenement;
 use Illuminate\Support\Facades\Auth;
@@ -104,6 +105,12 @@ class EvenementsController extends Controller
      */
     public function update(Request $request, $id)
     {
+        if($request->vote == "true"){
+            $evenement = Evenement::find($id);
+            $evenement->vote = $evenement->vote + 1;
+            $evenement->save();
+            return redirect('/evenements/'.$id);
+        } else {
         $evenement = Evenement::find($id);
         $this->authorize('update',$evenement);
         $this->validate($request,[
@@ -118,9 +125,11 @@ class EvenementsController extends Controller
         $evenement->urlPhotoPrincipale = $request->input('urlPhotoPrincipale');
         $evenement->description = $request->input('description');
         $evenement->dateEvenement = $request->input('dateEvenement');
+        $evenement->id_Validation_Evenement = 1;
         $evenement->save();
 
         return redirect('/evenements')->with('success','Evenement modifier');
+        }
     }
 
     /**
@@ -135,5 +144,11 @@ class EvenementsController extends Controller
         $this->authorize('delete',$evenement);
         $evenement->delete();
         return redirect('/evenements')->with('success','Evenement supprimer');
+    }
+
+    public function vote(Request $request, $id){
+        $evenement = Evenement::find($id);
+        $evenement->vote = $evenement->vote + 1;
+        $evenement->save();
     }
 }

@@ -17,6 +17,8 @@ Route::get('/', function () {
 
 Auth::routes();
 
+Route::patch('evenements/{id_Evenement}/vote','EvenementsController@vote');
+
 Route::get('/home', 'HomeController@index')->name('home');
 Route::resource('evenements','EvenementsController');
 Route::get('evenements{n}', 'EvenementsController@show')->where('n' ,'[0-9]+');
@@ -45,7 +47,6 @@ Route::get('/{n}', 'PhotoController@show')->where('n' ,'[1-9]+');
 
 Route::post('evenementsValider/{id_Evenement}',['uses'=>'EvenementsValiderController@store','as'=>'inscription.store']);
 
-Route::resource('/evenementsValider/{id_Evenement}/listeinscrits','listeInscritsController');
 
 
 

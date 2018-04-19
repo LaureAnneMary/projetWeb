@@ -7,6 +7,8 @@
 
 @section('content')
 
+    <a href="/evenementsValider/{{$evenementValider->id}}?type=1" class="btn btn-primary" >Retour</a>
+
     <h1>Liste des inscrits</h1>
 {{--@php(dd($evenementValider->userInscription))--}}
     @foreach($evenementValider->userInscription as $liste)

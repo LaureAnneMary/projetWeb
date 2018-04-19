@@ -35,7 +35,8 @@
         {{--Cette ligne va nous permettre de faire notre requête PUT--}}
     {{Form::hidden('_method','PUT')}}
 
-    {{Form::submit('Modifier',['class'=>'btn btn-primary'])}}
+    {{Form::submit('Valider',['class'=>'btn btn-primary'])}}
     {!! Form::close() !!}
+
 
 @endsection
