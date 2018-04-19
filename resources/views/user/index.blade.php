@@ -21,7 +21,7 @@
     <script>
         $('#easyPaginate').easyPaginate({
             paginateElement: 'p',
-            elementsPerPage: 5,
+            elementsPerPage: 10,
             effect: 'climb'
         });
     {{--</script>--}}
@@ -42,7 +42,7 @@
                         $("#easyPaginate").html(data);
                         $('#easyPaginate').easyPaginate({
                             paginateElement: 'p',
-                            elementsPerPage: 5,
+                            elementsPerPage: 10,
                             effect: 'climb'
                         });
                     },
