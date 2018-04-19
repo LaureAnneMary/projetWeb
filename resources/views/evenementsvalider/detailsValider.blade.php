@@ -14,7 +14,7 @@
         <p>{{$evenementValider->description}}</p>
 
         <p>{{$evenementValider->prix}} €</p>
-
+        <p>Aura lieu le {{$evenementValider->dateEvenement}}</p>
 
     <div>
         <p><img width="400" src="{{asset('images/'.$evenementValider->urlPhotoPrincipale)}}"/> </p>
