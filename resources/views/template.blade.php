@@ -120,10 +120,9 @@
                         src="https://www.google.com/maps/embed/v1/place?key=AIzaSyAlnAPZfqZupIK9wch0TzHw1ULLDBx_szQ
     &q=264+boulvard+godard,+33000+bordeaux" allowfullscreen>
                 </iframe>
-				<section>
-					<p>Mentions légales</p>
-				</section>
+
 			</div>
+            @include('mentions_legales')
 		</div>
 
     @yield('script')
